@@ -1,0 +1,203 @@
+*,
+h1,
+h2,
+div,
+ul,
+ol,
+li,
+a {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: montserrat,sans-serif;
+}
+
+.box-layout-gray {
+  background-color: #F8F8FF;
+}
+
+.box-layout-while {
+  background-color: #fff;
+}
+
+.box-padding {
+  padding: 60px 0;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+#header {
+  position:sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  background: #76448A;
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 11%);
+  font-size: 16.17px;
+}
+
+#header-inner {
+  width: 980px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+#header-inner h2 {
+  margin-right: 12px;
+  font-size: 28px;
+  color: #fff;
+}
+
+#header-inner ul {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+#header-inner ul li {
+  display: flex;
+  padding: 0 12px;
+}
+
+#header-inner ul li a {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+}
+
+#header-inner ul li a[data-active] {
+  color: #ffeb3b;
+}
+
+.about {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.about .left {
+  margin-right: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about .left h3 {
+  font-size: 32px;
+}
+
+.about .left p {
+  font-size: 18px;
+}
+
+.about .left ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.about .left ul li + li {
+  margin-left: 12px;
+}
+
+.about .left > img {
+  width: 270px;
+  height: 270px;
+  border-radius: 100%;
+}
+
+.about .right {
+  letter-spacing: 2px;
+}
+
+.about .right h2 {
+  font-size: 48px;
+  color: #313131;
+  margin-bottom: 40px;
+}
+
+.about .right div {
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+#Publications {
+  font-size: 34px;
+  margin-bottom: 40px;
+}
+
+.publications-block {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.publications-block > img {
+  width: 272px;
+  height: 160px;
+}
+
+.publications-block .row {
+  margin-left: 6px;
+}
+
+.publications-block .row > div {
+  margin-bottom: 2px;
+}
+
+.publications-block .row .resu {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 20px;
+  list-style: none;
+}
+
+.publications-block .row .resu li + li {
+  margin-left: 12px;
+}
+
+.publications-block .row .resu a {
+  padding: 2px 6px;
+  font-size: 14px;
+  color: #3f51b5;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+#Educations {
+  margin-bottom: 60px;
+}
+
+#Educations + .row {
+  margin-bottom: 40px;
+}
+
+#Experience {
+  margin-bottom: 60px;
+}
+
+.experience .row {
+  margin-bottom: 40px;
+}
+
+#Hobbies {
+  margin-bottom: 40px;
+}

@@ -1,5 +1,5 @@
 <!-- Kaihua Tang, 2017.11.20 -->
-<html class="kaihua__cs_sjtu_edu">
+<html class="kaihua__cs_sjtu_edu" lang="en">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -9,61 +9,23 @@
   <script src="./JS_CSS_Files/bootstrap.min.js"></script>
   <link href="./JS_CSS_Files/bootstrap.min.css" rel="stylesheet">
   <link href="./JS_CSS_Files/css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="./css/index.css">
   <style>
     body {
-      font-family: 'sans-serif';
+      font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,noto sans,liberation sans,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
       font-size: 16px;
       background-color: #F8F8FF;
-      color: #4F6071;
+      color: #212529;
     }
 
     .color1 {
       background-color: #CCC;
     }
 
-    #header {
-      width: 100%;
-      height: 360px;
-      background-color: #E6E6FA
-        /* background-color: #b30000; */
-    }
-
-    #header-inner {
-      position: absolute;
-      width: 70%;
-      left: 30%;
-      top: 150px;
-    }
-
     .img-me {
       border: 3px solid white;
       float: left;
       height: 200px;
-    }
-
-    .header-text {
-      margin-top: 60px;
-      margin-left: 220px;
-    }
-
-    .header-text-name {
-      font-weight: bold;
-      font-size: 40px;
-    }
-
-    .header-text-email {
-      font-size: 20px;
-      font-style: italic;
-    }
-
-    .header-text-cv {
-      margin-left: 50px;
-      font-size: 20px;
-      font-style: italic;
-    }
-
-    .header-text-desc {
-      font-size: 20px;
     }
 
     #contact-info {
@@ -75,50 +37,60 @@
       background-color: #EEE;
     }
 
-    .vspace {
-      margin-bottom: 20px;
-    }
-
-    .vspace-top {
-      margin-top: 30px;
-    }
-
     .paper-title {
-      margin-left: 20px;
-      font-size: 18px;
+      margin-left: 45px;
+      font-size: 23px;
       font-weight: bold;
     }
 
     .paper-authors {
-      margin-left: 20px;
+      margin-left: 45px;
+      font-size: 18px;
       font-style: italic;
     }
 
     .paper-link {
-      margin-left: 20px;
+      margin-left: 45px;
     }
 
     .paper-detail {
-      margin-left: 20px;
+      margin-left: 45px;
+      font-style: italic;
     }
 
-    .school-image {
+
+      .paper_area {
+      margin-left: 45px;
+      font-size: 20px;
+      /*font-style: italic;*/
+    }
+
+
+    .school_image {
       width: 100px;
     }
 
-    .dual-school-image {
+
+    .school_image_ntu {
+      width: 80px;
+    }
+
+    .dual-school_image {
       width: 150px;
     }
 
     .school-name {
-      font-size: 20px;
+      font-size: 24px;
     }
 
     .school-time {
+      font-size: 18px;
       font-style: italic;
     }
 
-    .school-detail {}
+    .school-detail {
+      font-size: 18px;
+    }
 
     .project-image {
       width: 300px;
@@ -126,7 +98,7 @@
 
     .project-name {
       margin-left: 120px;
-      font-size: 20px;
+      font-size: 24px;
       font-weight: bold;
     }
 
@@ -144,162 +116,314 @@
     ga('create', 'UA-50623594-1', 'auto');
     ga('send', 'pageview');
   </script>
+  <script src="./js/index.js" async="async"></script>
 </head>
 
-<body data-gr-c-s-loaded="true">
+<body data-gr-c-s-loaded="true" id="Home">
   <div id="header">
     <div id="header-inner">
-      <img src="./Img_Files/selfie.jpg" class="img-circle img-me">
-      <div class="header-text">
-        <div class="header-text-name">
-          Xinting Hu
-        </div>
-        <div class="header-text-email">
-          joyhu1412 [at] gmail [dot] com
-        </div>
-        <div>
-          <a href="https://github.com/JoyHuYY1412">[Github]</a> 
-          <a href="./Files/CV.pdf">[Résumé]</a>
-        </div>
-      </div>
+      <h2> &nbsp;&nbsp;&nbsp;&nbsp;Xinting Hu</h2>
+      <!-- <h2>Xinting Hu</h2> -->
+      <ul>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#Publications">Publications</a></li>
+        <li><a href="#Education">Education</a></li>
+        <li><a href="#Experience">Experience</a></li>
+        <li><a href="#Hobbies">Hobbies</a></li>
+      </ul>
     </div>
   </div>
-
-  <div class="container">
-    <div class="col-md-11 col-md-offset-1">
-      <div class="row">
-        <h2>About Me</h2>
+  <div class="box-layout-while">
+    <div class="about">
+      <div class="left">
+        <img src="./Img_Files/selfie.jpg">
+        <h3>Xinting Hu</h3>
+        <p><i>joyhu1412@gmail.com</i></p>
+        <ul>
+          <li>
+            <a href="https://scholar.google.com/citations?hl=en&user=o6h6sVMAAAAJ">
+              <img src="./Img_Files/cv.png">
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/JoyHuYY1412">
+              <img src="./Img_Files/github.png">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/xinting-hu-88a776b4/">
+              <img src="./Img_Files/in.png">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="right">
+        <h2><font face='Gill Sans'> About Me</font></h2>
         <div class="vspace">
-          I'm a third-year Ph.D. student at Nanyang Technological University <a href="https://mreallab.github.io/"
-            target="_blank">MReaL Lab</a>, supervised by <a href="https://personal.ntu.edu.sg/hanwangzhang/"
-            target="_blank">Hanwang Zhang</a>, and founded by <a href="http://www.ntulily.org/"
-            target="_blank">Lily Center</a>. I got my Bachelor's degree in School of Informantion Science and Technology
+          I'm a fourth-year Ph.D. student from <a href="https://mreallab.github.io/"
+            target="_blank">MReaL Lab</a>, Nanyang Technological University, supervised by <a href="https://personal.ntu.edu.sg/hanwangzhang/"
+            target="_blank">Hanwang Zhang</a>. 
+     <!--        Before this, I got my Bachelor's degree in School of Informantion Science and Technology
           <a href="https://sist.ustc.edu.cn/" target="_blank">
             (SIST)</a>
-          at University of Science and Technology of China.
+          at University of Science and Technology of China. -->
         </div>
-
         <div>
           I'm currently working on 1) image recoginition, including image classification, image segmentation and recoginition for biased datasets like long-tailed recognition,
           and 2) incremental learning and its fundamental mechanisms from the causal viewpoint.
         </div>
+        <div>
+          My CV is <a href="./Files/CV.pdf">here</a>.
+        </div>
       </div>
+    </div>
+  </div>
+  <div class="box-layout-gray box-padding">
+    <div class="container">
+      <div class="col-md-11 col-md-offset-1">
+        <div class="row">
+          <h2 id="Publications"><font face='Gill Sans' size = '30'> Publications</font></h2>
 
-
-      <div class="row">
-        <h2>Publications</h2>
-
-        <div class="row vspace-top">
-          <div class="paper-title">
-            <a href="https://arxiv.org/abs/2103.01737" target="_blank">
-              Distilling Causal Effect of Data in Class-Incremental Learning
-            </a>
+          <div class="publications-block">
+            <img src="./Img_Files/paper1.png" align='AbsMiddle' />
+            <div class="row vspace-top">
+              <div class="paper-title">
+                <!-- <a href="https://arxiv.org/abs/2103.01737" target="_blank"> -->
+                  On Non-Random Missing Labels in Semi-Supervised Learning
+                <!-- </a> -->
+              </div>
+              <div class="paper-authors">
+                <b>Xinting Hu</b>, Yulei Niu, Chunyan Miao, Xian-Sheng Hua, Hanwang Zhang
+              </div>
+              <div class="paper-detail">
+                The Tenth International Conference on Learning Representations, <b>ICLR 2022</b>
+              </div>
+              <div class="paper_area"><font face='Gill Sans' >
+                Area: Image Classification, Semi-Supervised learning, Missing Data </font>
+              </div>
+              <ul class="resu" style="padding-left:25px">
+                <li><a href="https://arxiv.org/abs/2103.01737" target="_blank">PDF</a></li>
+                <li><a href="https://github.com/JoyHuYY1412/CADR-FixMatch">Code</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="paper-authors">
-            <b>Xinting Hu</b>, Kaihua Tang, Chunyan Miao, Xian-Sheng Hua, Hanwang Zhang
+  
+          <br />
+          <br />
+
+          <div class="publications-block">
+            <img src="./Img_Files/paper2.jpg" />
+            <div class="row vspace-top">
+              <div class="paper-title">
+                <!-- <a href="https://arxiv.org/abs/2103.01737" target="_blank"> -->
+                  Distilling Causal Effect of Data in Class-Incremental Learning
+                <!-- </a> -->
+              </div>
+              <div class="paper-authors">
+                <b>Xinting Hu</b>, Kaihua Tang, Chunyan Miao, Xian-Sheng Hua, Hanwang Zhang
+              </div>
+              <div class="paper-detail">
+                2021 Conference on Computer Vision and Pattern Recognition, <b>CVPR 2021</b>
+              </div>
+              <div class="paper_area"><font face='Gill Sans' >
+                Area: Image Classification, Class-Incremental Learning, Causal Reasoning</font>
+              </div>
+              <ul class="resu" style="padding-left:25px">
+                <li><a href="https://arxiv.org/abs/2103.01737" target="_blank">PDF</a></li>
+                <li><a href="https://github.com/JoyHuYY1412/DDE_CIL">Code</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="paper-detail">
-            CVPR 2021</b>
+
+          <br />
+          <br />
+
+          <div class="publications-block">
+            <img src="./Img_Files/paper3.jpg" />
+            <div class="row vspace-top">
+              <div class="paper-title">
+                <!-- <a href="https://arxiv.org/abs/2004.00900" target="_blank"> -->
+                  Learning to Segment the Tail
+                <!-- </a> -->
+              </div>
+              <div class="paper-authors">
+                <b>Xinting Hu</b>, Yi Jiang, Kaihua Tang, Hanwang Zhang, Chunyan Miao, Jingyuan Chen
+              </div>
+              <div class="paper-detail">
+                 2020 Conference on Computer Vision and Pattern Recognition, <b>CVPR 2020</b>
+              </div>
+              <div class="paper_area"><font face='Gill Sans' >
+                Area: Image Segmentation, Long-Tail Recognition </font>
+              </div>
+              <ul class="resu" style="padding-left:25px">
+                <li><a href="https://arxiv.org/abs/2004.00900" target="_blank">PDF</a></li>
+                <li><a href="https://github.com/JoyHuYY1412/LST_LVIS">Code</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="box-layout-while box-padding">
+    <div class="container">
+      <div class="col-md-11 col-md-offset-1">
+        <div class="row">
+          <h2 id="Education"><font face='Gill Sans' size = '30'> Education</font></h2>
+
+          <br />
+          <br />
+
+          <div class="row vspace-top">
+            <div class="col-xs-3 text-center">
+              <img class="school_image_ntu" src="./Img_Files/ntu2.png">
+            </div>
+            <div class="col-xs-9">
+              <div class="school-name">
+                <b>Nanyang Technological University</b>, Singapore
+              </div>
+              <div class="school-time">
+                Ph.D Candidate of Computer Science and Engineering (2018.7 - Now)
+              </div>
+              <div class="school-detail">
+                Mentored by Asst Prof.Zhang Hanwang and Prof.Chunyan Miao.
+              </div>
+            </div>
+          </div>
+  
+          <br />
+          <br />
+
+          <div class="row vspace-top">
+            <div class="col-xs-3 text-center">
+              <img class="school_image" src="./Img_Files/USTC.png">
+            </div>
+            <div class="col-xs-9">
+              <div class="school-name">
+                <b>University of Science and Technology of China</b>, China
+              </div>
+              <div class="school-time">
+                Bachelor of Engineering (2014.9 - 2018.8)
+              </div>
+              <div class="school-detail">
+                Major in Informantion Science and Technology.
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="box-layout-gray box-padding">
+    <div class="container">
+      <div class="col-md-11 col-md-offset-1">
+        <div class="row vspace-top vspace experience">
+        <h2 id="Experience"><font face='Gill Sans' size = '30'> Experience</font></h2>
+
+
+          <div class="row vspace-top">
+            <div class="col-xs-3 text-center">
+              <img class="school_image" src="./Img_Files/damo.svg">
+            </div>
+            <div class="col-xs-9">
+              <div class="school-name">
+                <b>DAMO Academy, Alibaba  (2019.7 - Now)</b>
+              </div>
+              <div class="school-detail">
+                Position: Research Intern       Mentor: Jingyuan Cheng, Xiansheng Hua
+              </div>
+              <div class="school-time">
+                Major topic: De-biased Image Recognition
+              </div>
+              <div >
+                My work focus on general image recognition where the data is not ideally balanced, well-labeled, and time-streaming in realistc sceneros.
+              </div>
+            </div>
+          </div>
+
+          <div class="row vspace-top">
+            <div class="col-xs-3 text-center">
+              <img class="school_image" src="./Img_Files/USTC.png">
+            </div>
+            <div class="col-xs-9">
+              <div class="school-name">
+                <b> Design-Innovation Project & SUGAR Network, USTC & Stanford (2017.6 - 2018.6)</b>
+              </div>
+              <div class="school-detail">
+                Position: Team Leader       Mentor: Weiping Li, Bin Li
+              </div>
+              <div class="school-time">
+                Major topic: Accessible Design for Helping the Blind
+              </div>
+              <div>
+                We design an interactive sticker and its companion app to help the blind record daily life. 
+              </div>
           </div>
         </div>
 
-        <div class="row vspace-top">
-          <div class="paper-title">
-            <a href="https://arxiv.org/abs/2004.00900" target="_blank">
-              Learning to Segment the Tail
-            </a>
-          </div>
-          <div class="paper-authors">
-            <b>Xinting Hu</b>, Yi Jiang, Kaihua Tang, Hanwang Zhang, Chunyan Miao, Jingyuan Chen
-          </div>
-          <div class="paper-detail">
-            CVPR 2020
-          </div>
-        </div>
-
-      </div>
-
-      <div class="row">
-        <h2>Educations</h2>
-
-        <div class="row vspace-top">
-          <div class="col-xs-3 text-center">
-            <img class="school-image" src="./Img_Files/ntu2.png">
-          </div>
-          <div class="col-xs-9">
-            <div class="school-name">
-              <b>Nanyang Technological University</b>, Singapore
+          <div class="row vspace-top">
+            <div class="col-xs-3 text-center">
+              <img class="school_image" src="./Img_Files/UTS.jpeg">
             </div>
-            <div class="school-time">
-              Ph.D Candidate of Computer Science and Engineering (2018.7 - Now)
-            </div>
-            <div class="school-detail">
-              Mentored by Asst Prof.Zhang Hanwang and Prof.Chunyan Miao.
+            <div class="col-xs-9">
+              <div class="school-name">
+                <b> Research Exchange, University of Technology Sydney (2017.6 - 2017.8)</b>
+              </div>
+              <div class="school-detail">
+                    Mentor: Stuart Perry
+              </div>
+              <div class="school-time">
+                Major topic: Reflaction Detection of Light-field Images 
+              </div>
+              <div>
+                I design a reflaction-detector based on the incontinuous scene depth calculated by light-field images. 
+              </div>  
             </div>
           </div>
-        </div>
 
+          <div class="row vspace-top">
+            <div class="col-xs-3 text-center">
+              <img class="school_image" src="./Img_Files/USTC.png">
+            </div>
+            <div class="col-xs-9">
+              <div class="school-name">
+                <b> MOE-Microsoft Key Lab, USTC (2016.8 - 2017.9)</b>
+              </div>
+              <div class="school-detail">
+                Mentor: Zhibo Chen
+              </div>
 
-        <div class="row vspace-top">
-          <div class="col-xs-3 text-center">
-            <img class="school-image" src="./Img_Files/USTC.png">
-          </div>
-          <div class="col-xs-9">
-            <div class="school-name">
-              <b>University of Science and Technology of China</b>, China
-            </div>
-            <div class="school-time">
-              Bachelor of Engineering (2014.9 - 2018.8)
-            </div>
-            <div class="school-detail">
-              Major in Informantion Science and Technology.
+              <div class="school-time">
+                Major Project: Subjective Quality Assessment of Plenoptic Images
+              </div>
+              <div>
+                I design a scoring system based on C# for volunteers to evaluate the images, where the photo refocus according to the position the click.
+              </div>
             </div>
           </div>
         </div>
-
       </div>
+    </div>
+  </div>
+  <div class="box-layout-while box-padding">
+    <div class="container">
+      <div class="col-md-11 col-md-offset-1">
+        <div class="row vspace-top vspace">
+          <h2 id="Hobbies"><font face='Gill Sans' size = '30'> Hobbies</font></h2>
 
-
-      <div class="row vspace-top vspace">
-        <h2>Experience</h2>
-
-        <h4><b>Alibaba, DAMO Academy, Research Intern (2019.7 - Now)</b></h4>
-        Major topic: De-biased Image Recognition
-        <br>
-        Mentor: Jingyuan Cheng, Xiansheng Hua
-        <br><br>
-
-        <h4><b>Team Leader, Design&Innovation Project (2017.6 - 2018.6)</b></h4>
-        Major topic: Accessible Design for Helping the Blind
-        <br>
-        Mentor: Weiping Li, Bin Li
-        <br><br>
-
-        <h4><b>UTS, Sydney, Research Intern (2017.6 - 2017.8)</b></h4>
-        Major topic: Detecting Reflaction of Light-field Images 
-        <br>
-        Mentor: Stuart Perry
-        <br><br>
-
-        <h4><b>MOE-Microsoft Key Lab (2016.8 - 2017.9)</b></h4>
-        Major Project: Refocusing of Plenoptic Images
-        <br>
-        Mentor: Zhibo Cheng
-        <br><br>
-
-      </div>
-
-
-      <div class="row vspace-top vspace">
-        <h2>Hobbies</h2>
-
-        <h4><b><a href="https://space.bilibili.com/30495984" target="_blank">
-            Jazz Drum</a></b></h4>
-        
-
-
-        <h4><b>English Caligraphy</b></h4>
-
+          <font size = '20'><h4><b> 
+              Jazz Drum  </b></h4>  </font>
+              You can check my <a href="https://space.bilibili.com/30495984" target="_blank">Bilibili</a> page for videos.  
+          <br />
+          <br />
+          <font size = '20'> <h4><b>English Caligraphy</b></h4> </font>
+              Just for fun. Very useful for writing birthday cards.
+          <br />
+          <br />
+          <font size = '20'> <h4><b>Reading</b></h4> </font>
+              Wide love spread from Agatha Christie to Stefan Zweig. </font>
+        </div>
       </div>
     </div>
   </div>
@@ -313,7 +437,7 @@
 
   <p align="center"><br>
     <span class="STYLE6">
-      All rights reserved & Last update on April, 2021
+      All rights reserved & Last update on Feb, 2022
     </span>
   </p>
 
