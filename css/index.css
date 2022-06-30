@@ -120,7 +120,7 @@ h3 {
 
 .about .left > img {
   width: 270px;
-  height: 270px;
+  /* height: 270px; */
   border-radius: 100%;
 }
 
