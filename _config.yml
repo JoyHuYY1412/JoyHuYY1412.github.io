@@ -35,7 +35,9 @@ footnote_link: https://yaoyaoliu.web.illinois.edu/
 # Analytics
 # Please remove the following lines about analytics services if you fork my project. 
 # Otherwise, the analytics information of your website will be recorded to my ClustrMaps accounts.
-clustrmaps_id: 1NCNGPZpDcKbLu1J8u38hbtnjNGGr4a0fX3CBo7zRP4
+
+# clustrmaps_id: 1NCNGPZpDcKbLu1J8u38hbtnjNGGr4a0fX3CBo7zRP4
+clustrmaps_id: True
 
 # The following files will be removed from the generated website.
 exclude:

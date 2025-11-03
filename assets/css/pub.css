@@ -73,3 +73,55 @@ blockquote { background: var(--global-bg-color); border-left: 2px solid var(--gl
 .publications ol.bibliography li div.abstract.hidden.open { border-color: var(--global-text-color); }
 
 .publications ol.bibliography li .teaser { border-radius: 8px; box-shadow: 3px 3px 6px #888; height: 123px; width: 270px; margin-top: 5px; margin-left: 5px; margin-bottom: 5px; object-fit: cover; }
+
+/* —— 仅手机端：强制单列栈叠，彻底避免图片与文字重叠 —— */
+@media (max-width: 768px) {
+  /* 1) 每条 publication 改为单列网格，保证元素顺序上下排列 */
+  .publications ol.bibliography li {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: auto !important;
+    align-items: start !important;
+    min-height: auto !important;
+  }
+
+  /* 2) 图片：独占一行，清除一切浮动/定位/固定尺寸 */
+  .publications ol.bibliography li img.teaser,
+  .publications ol.bibliography li .teaser,
+  .publications ol.bibliography li .teaser img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    float: none !important;
+    position: static !important;
+    margin: 8px 0 !important;
+    object-fit: cover !important; /* 想完整不裁剪就改成 contain */
+    z-index: 0 !important;
+    order: 0 !important;          /* 放在最上面一行 */
+  }
+
+  /* 3) 文字块：全部排在图片之后，并清除浮动 */
+  .publications ol.bibliography li > *:not(img.teaser):not(.teaser):not(.teaser *){
+    order: 1 !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  /* 4) 若有绝对定位的缩写/徽标，手机端取消绝对定位，防止压到图片 */
+  .publications ol.bibliography li .abbr {
+    position: static !important;
+    height: auto !important;
+    margin: 4px 0 8px !important;
+    order: 1 !important;
+  }
+
+  /* 5) 兜底 clearfix（有残留 float 也不怕） */
+  .publications ol.bibliography li::after {
+    content: "" !important;
+    display: block !important;
+    clear: both !important;
+  }
+}
+
+
