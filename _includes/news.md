@@ -2,7 +2,7 @@
 
 <ul>
 <li><strong>[Mar. 2026]</strong> I will serve as an Area Chair of NeurIPS 2026. </li>
-<li><strong>[Jan. 2026]</strong> Our papers for unlearning and RL got accepted by ICLR!</a> </li>
+<li><strong>[Jan. 2026]</strong> Our papers for unlearning and RL got accepted by ICLR! </li>
 <li><strong>[Jan. 2026]</strong> Our <a href="https://t2i-corebench.github.io/">benchmark paper</a> for T2I got accepted by ICLR! Keep up-to-date <a href="https://t2i-corebench.github.io/">here</a>! </li>
 <li><strong>[Nov. 2025]</strong> I will host a Workshop about Next Generation VideGen, NeurIPS 2025. Check <a href="https://what-makes-good-video.github.io/">this</a>! </li>
 <li><strong>[Oct. 2025]</strong> I am selected as a Top Reviewer for NeurIPS 2025. </li>

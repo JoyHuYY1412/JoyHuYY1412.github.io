@@ -1,15 +1,15 @@
 # Basic Information 
 title: Xinting Hu
-position: Postdoctoral Researcher
-affiliation: HongKong University
+position: Professor 
+affiliation: University of Science and Technology of China
 affiliation_link: https://en.ustc.edu.cn/
 affiliation_logo: ./assets/img/ustc_logo.svg
-email: xinting001@e.ntu.edu.sg
+email: xinting@ustc.edu.cn
 
 # Search Engine Optimization (SEO)
 keywords: xinting hu, hu xinting, xintinghu, huxinting
 #canonical: https://yaoyaoliu.web.illinois.edu
-description: Xinting Hu is a postdoctoral researcher at the University of Hong Kong. Her research lies in equip machines with open-world capabilities for perceiving, understanding, and reconstructing the visual world.
+description: Xinting Hu is a professor at University of Science and Technology of China. Her research lies in equip machines with open-world capabilities for perceiving, understanding, and reconstructing the visual world.
 
 # The option is used to enable the Illinois template.
 enable_hopkins_logo: true
