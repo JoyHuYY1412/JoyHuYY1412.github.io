@@ -11,7 +11,11 @@
 <li>
 <div class="pub-row">
   <div class="pub-visual">
-    {% if link.image %}
+    {% if link.video %}
+    <video class="teaser teaser-video" autoplay muted loop playsinline preload="metadata" poster="{{ link.image }}" aria-label="Animated teaser for {{ link.title | escape }}">
+      <source src="{{ link.video }}" type="video/mp4">
+    </video>
+    {% elsif link.image %}
     <img src="{{ link.image }}" class="teaser" alt="Teaser for {{ link.title | escape }}" loading="lazy">
     {% else %}
     <div class="teaser teaser-placeholder" role="img" aria-label="{{ link.title | escape }}">
@@ -56,3 +60,12 @@
 
 </ol>
 </div>
+
+<script>
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.teaser-video').forEach(function (video) {
+      video.removeAttribute('autoplay');
+      video.pause();
+    });
+  }
+</script>

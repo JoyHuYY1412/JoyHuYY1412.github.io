@@ -5,6 +5,7 @@ main:
     conference_short: ICML
     conference: International Conference on Machine Learning (ICML), 2026.
     image: ../assets/pub12.jpg
+    video: ../assets/pub12.mp4
     pdf: https://arxiv.org/pdf/2605.30325
     page: https://veda-sparse.github.io/
     bibtex: ../assets/veda_bibtex.txt
@@ -23,6 +24,7 @@ main:
     conference_short: ICML
     conference: International Conference on Machine Learning (ICML), 2026.
     image: ../assets/pub14.jpg
+    video: ../assets/pub14.mp4
     pdf: https://arxiv.org/pdf/2602.03747
     page: https://junchao-cs.github.io/LIVE-demo/
     bibtex: ../assets/live_world_model_bibtex.txt
