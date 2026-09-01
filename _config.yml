@@ -1,15 +1,16 @@
 # Basic Information 
 title: Xinting Hu
+url: https://joyhuyy1412.github.io
+canonical: https://joyhuyy1412.github.io
 position: Professor 
 affiliation: University of Science and Technology of China
 affiliation_link: https://en.ustc.edu.cn/
-affiliation_logo: ./assets/img/ustc_logo.svg
+affiliation_logo: /assets/img/ustc_logo.svg
 email: xinting@ustc.edu.cn
 
 # Search Engine Optimization (SEO)
 keywords: xinting hu, hu xinting, xintinghu, huxinting
-#canonical: https://yaoyaoliu.web.illinois.edu
-description: Xinting Hu is a professor at University of Science and Technology of China. Her research lies in equip machines with open-world capabilities for perceiving, understanding, and reconstructing the visual world.
+description: Xinting Hu is a professor at the University of Science and Technology of China. Her research focuses on equipping machines with open-world capabilities for perceiving, understanding, and reconstructing the visual world.
 
 # The option is used to enable the Illinois template.
 enable_hopkins_logo: true
@@ -19,14 +20,14 @@ enable_last_update: false
 
 # Links
 link_type: icon #text/icon
-google_scholar: https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=o6h6sVMAAAAJ
+google_scholar: https://scholar.google.com/citations?view_op=list_works&hl=en&user=o6h6sVMAAAAJ
 github_link: https://github.com/JoyHuYY1412 
 linkedin: https://www.linkedin.com/in/xinting-hu-88a776b4/
 twitter: https://x.com/kaleidudu?s=21
 
 # Images 
 #avatar: https://img.yliu.me/avatar_new.jpg
-avatar: ../assets/profile.png
+avatar: /assets/profile.png
 
 # Footnotes
 footnote: This homepage is adapted from Yaoyao's template. Thanks for sharing the source code!

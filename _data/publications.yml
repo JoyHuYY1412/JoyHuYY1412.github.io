@@ -1,8 +1,32 @@
 main:
 
-  - title: "Memory Forcing Spatio-Temporal Memory for Consistent Scene Generation on Minecraft"
+  - title: "Veda: Scalable Video Diffusion via Distilled Sparse Attention"
+    authors: Shihao Han, Hao Yang, <strong>Xinting Hu#</strong>, Xiaofeng Mei, Yi Jiang, Xiaojuan Qi#
+    conference_short: ICML
+    conference: International Conference on Machine Learning (ICML), 2026.
+    pdf: https://arxiv.org/pdf/2605.30325
+    page: https://veda-sparse.github.io/
+    bibtex: ../assets/veda_bibtex.txt
+
+  - title: "SemanticNVS: Improving Semantic Scene Understanding in Generative Novel View Synthesis"
+    authors: Xinya Chen, Christopher Wewer, Jiahao Xie, <strong>Xinting Hu</strong>, Jan Eric Lenssen
+    conference_short: ICML
+    conference: International Conference on Machine Learning (ICML), 2026.
+    pdf: https://arxiv.org/pdf/2602.20079
+    page: https://semanticnvs.github.io/
+    bibtex: ../assets/semanticnvs_bibtex.txt
+
+  - title: "LIVE: Long-horizon Interactive Video World Modeling"
+    authors: Junchao Huang, Ziyang Ye, <strong>Xinting Hu</strong>, Tianyu He, Guiyu Zhang, Shaoshuai Shi, Jiang Bian, Li Jiang
+    conference_short: ICML
+    conference: International Conference on Machine Learning (ICML), 2026.
+    pdf: https://arxiv.org/pdf/2602.03747
+    page: https://junchao-cs.github.io/LIVE-demo/
+    bibtex: ../assets/live_world_model_bibtex.txt
+
+  - title: "Memory Forcing: Spatio-Temporal Memory for Consistent Scene Generation on Minecraft"
     authors: Junchao Huang, <strong>Xinting Hu</strong>, Boyao Han, Shaoshuai Shi, Zhuotao Tian, Tianyu He, Li Jiang
-    conference_short: arxiv
+    conference_short: arXiv
     
     image: ../assets/pub01.png
     pdf: https://arxiv.org/pdf/2510.03198
@@ -83,8 +107,8 @@ main:
     conference: International Conference on Learning Representations (ICLR), 2022.
     
     image: ../assets/pub09.png
-    pdf: https://arxiv.org/pdf/2103.01737
-    page: https://github.com/JoyHuYY1412/Class_Imbalanced_Semi_Supervised_Learning
+    pdf: https://arxiv.org/pdf/2206.14923
+    page: https://github.com/JoyHuYY1412/CADR-FixMatch
     bibtex: ../assets/pub09_bibtex.txt
 
   - title: "Distilling Causal Effect of Data in Class-Incremental Learning"
@@ -94,7 +118,7 @@ main:
     
     image: ../assets/pub10.png
     pdf: https://arxiv.org/pdf/2103.01737
-    page: https://github.com/JoyHuYY1412/ DDE_CIL
+    page: https://github.com/JoyHuYY1412/DDE_CIL
     bibtex: ../assets/pub10_bibtex.txt  
 
   - title: "Learning to Segment the Tail"
@@ -104,6 +128,5 @@ main:
     
     image: ../assets/pub11.png
     pdf: https://arxiv.org/pdf/2004.00900
-    page: https://github.com/JoyHuYY1412/ LST_LVIS
+    page: https://github.com/JoyHuYY1412/LST_LVIS
     bibtex: ../assets/pub11_bibtex.txt 
-

@@ -2,6 +2,9 @@
 
 <ul>
 <!-- <li><strong>[Mar. 2026]</strong> I will serve as an Area Chair of NeurIPS 2026. </li> -->
+<li><strong>[Sep. 2026]</strong> I will teach 电子信息类开放实践课 in Fall 2026, starting on September 21. </li>
+<li><strong>[Aug. 2026]</strong> I will serve as an Area Chair for ICLR 2027. </li>
+<li><strong>[May. 2026]</strong> Three papers on <a href="https://veda-sparse.github.io/">efficient video diffusion</a>, <a href="https://semanticnvs.github.io/">novel view synthesis</a>, and <a href="https://junchao-cs.github.io/LIVE-demo/">interactive video world modeling</a> were accepted by ICML 2026. </li>
 <li><strong>[Jan. 2026]</strong> Our papers for unlearning and RL got accepted by ICLR! </li>
 <li><strong>[Jan. 2026]</strong> Our <a href="https://t2i-corebench.github.io/">benchmark paper</a> for T2I got accepted by ICLR! Keep up-to-date <a href="https://t2i-corebench.github.io/">here</a>! </li>
 <li><strong>[Nov. 2025]</strong> I will host a Workshop about Next Generation VideGen, NeurIPS 2025. Check <a href="https://what-makes-good-video.github.io/">this</a>! </li>

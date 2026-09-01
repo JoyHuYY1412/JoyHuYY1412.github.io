@@ -1,0 +1,9 @@
+@misc{huang2026live,
+  title={LIVE: Long-horizon Interactive Video World Modeling},
+  author={Huang, Junchao and Ye, Ziyang and Hu, Xinting and He, Tianyu and Zhang, Guiyu and Shi, Shaoshuai and Bian, Jiang and Jiang, Li},
+  year={2026},
+  eprint={2602.03747},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2602.03747}
+}

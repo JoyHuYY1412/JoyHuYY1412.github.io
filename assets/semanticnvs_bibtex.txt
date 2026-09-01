@@ -1,0 +1,9 @@
+@misc{chen2026semanticnvs,
+  title={SemanticNVS: Improving Semantic Scene Understanding in Generative Novel View Synthesis},
+  author={Chen, Xinya and Wewer, Christopher and Xie, Jiahao and Hu, Xinting and Lenssen, Jan Eric},
+  year={2026},
+  eprint={2602.20079},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2602.20079}
+}

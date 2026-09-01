@@ -1,6 +1,6 @@
 <h1 id="publications"></h1>
 
-<h2 style="margin: 60px 0px -15px;">Publications <temp style="font-size:15px;">[</temp><a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=o6h6sVMAAAAJ" target="_blank" style="font-size:15px;">Google Scholar</a><temp style="font-size:15px;">]</temp><temp style="font-size:15px;">[</temp><a href="https://dblp.org/pid/222/7753.html" target="_blank" style="font-size:15px;">DBLP</a><temp style="font-size:15px;">]</temp></h2>
+<h2 class="publications-heading">Publications <span class="publication-index">[<a href="{{ site.google_scholar }}" target="_blank" rel="noopener">Google Scholar</a>] [<a href="https://dblp.org/pid/222/7753.html" target="_blank" rel="noopener">DBLP</a>]</span></h2>
 
 
 <div class="publications">
@@ -10,30 +10,36 @@
 
 <li>
 <div class="pub-row">
-  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
-            <abbr class="badge">{{ link.conference_short }}</abbr>
+  <div class="pub-visual">
+    {% if link.image %}
+    <img src="{{ link.image }}" class="teaser" alt="Teaser for {{ link.title | escape }}" loading="lazy">
+    {% else %}
+    <div class="teaser teaser-placeholder" role="img" aria-label="{{ link.title | escape }}">
+      <span>{{ link.conference_short }}</span>
+    </div>
+    {% endif %}
+    <abbr class="badge">{{ link.conference_short }}</abbr>
   </div>
-  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><a href="{{ link.pdf }}">{{ link.title }}</a></div>
+  <div class="pub-details">
+      <div class="title"><a href="{{ link.pdf }}" target="_blank" rel="noopener">{{ link.title }}</a></div>
       <div class="author">{{ link.authors }}</div>
       <div class="periodical"><em>{{ link.conference }}</em>
       </div>
     <div class="links">
       {% if link.pdf %} 
-      <a href="{{ link.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+      <a href="{{ link.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener">PDF</a>
       {% endif %}
       {% if link.code %} 
-      <a href="{{ link.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      <a href="{{ link.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener">Code</a>
       {% endif %}
       {% if link.page %} 
-      <a href="{{ link.page }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project Page</a>
+      <a href="{{ link.page }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener">Project Page</a>
       {% endif %}
       {% if link.data %} 
-      <a href="{{ link.data }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Dataset</a>
+      <a href="{{ link.data }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener">Dataset</a>
       {% endif %}
       {% if link.bibtex %} 
-      <a href="{{ link.bibtex }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">BibTex</a>
+      <a href="{{ link.bibtex }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener">BibTeX</a>
       {% endif %}
       {% if link.notes %} 
       <strong> <i style="color:#e74d3c; font-weight:600">{{ link.notes }}</i></strong>
@@ -46,11 +52,7 @@
 </div>
 </li>
 
-<br>
-
 {% endfor %}
 
 </ol>
 </div>
-
-

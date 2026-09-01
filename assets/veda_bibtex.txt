@@ -1,0 +1,9 @@
+@misc{han2026veda,
+  title={Veda: Scalable Video Diffusion via Distilled Sparse Attention},
+  author={Han, Shihao and Yang, Hao and Hu, Xinting and Mei, Xiaofeng and Jiang, Yi and Qi, Xiaojuan},
+  year={2026},
+  eprint={2605.30325},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2605.30325}
+}
