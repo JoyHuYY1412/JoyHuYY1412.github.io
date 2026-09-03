@@ -34,6 +34,7 @@ main:
     conference_short: arXiv
     
     image: ../assets/pub01.png
+    video: ../assets/pub01.mp4
     pdf: https://arxiv.org/pdf/2510.03198
     page: https://junchao-cs.github.io/MemoryForcing-demo/
     bibtex: ../assets/pub01_bibtex.txt
@@ -54,6 +55,7 @@ main:
     conference: IEEE International Conference on Computer Vision (ICCV), 2025.
     
     image: ../assets/pub03.png
+    video: ../assets/pub03.mp4
     pdf: https://arxiv.org/pdf/2506.10507
     page: https://junchao-cs.github.io/Edit360-demo/
     bibtex: ../assets/pub03_bibtex.txt
@@ -101,7 +103,7 @@ main:
     conference_short: CVPR
     conference: IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2024.
     
-    image: ../assets/pub08.png
+    image: ../assets/pub08.gif
     pdf: https://openaccess.thecvf.com/content/CVPR2024/papers/Hu_Training_Vision_Transformers_for_Semi-Supervised_Semantic_Segmentation_CVPR_2024_paper.pdf
     page: https://github.com/JoyHuYY1412/S4Former
     bibtex: ../assets/pub08_bibtex.txt
