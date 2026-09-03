@@ -60,12 +60,3 @@
 
 </ol>
 </div>
-
-<script>
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.teaser-video').forEach(function (video) {
-      video.removeAttribute('autoplay');
-      video.pause();
-    });
-  }
-</script>
