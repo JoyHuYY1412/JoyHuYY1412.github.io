@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#163a34">
+    <meta name="robots" content="noindex">
+    <title>Research Pulse</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --page: #f4f6f5;
+        --panel: #ffffff;
+        --ink: #17211f;
+        --muted: #60706c;
+        --line: #d7dfdc;
+        --accent: #176b5b;
+        --accent-hover: #105548;
+        --soft: #e9f2ef;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background: var(--page);
+        color: var(--ink);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+          "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      }
+
+      main {
+        width: min(100%, 520px);
+        padding: 42px 40px 38px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        box-shadow: 0 18px 46px rgb(30 51 46 / 8%);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 34px;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--accent);
+      }
+
+      .mark {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 6px var(--soft);
+      }
+
+      h1 {
+        margin: 0 0 14px;
+        font-size: clamp(28px, 7vw, 38px);
+        line-height: 1.18;
+        letter-spacing: 0;
+      }
+
+      p {
+        margin: 0;
+        font-size: 17px;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      .status {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-height: 28px;
+        margin-top: 28px;
+        font-size: 15px;
+        color: var(--muted);
+      }
+
+      .spinner {
+        width: 18px;
+        height: 18px;
+        border: 2px solid var(--line);
+        border-top-color: var(--accent);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+
+      .actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      a,
+      button {
+        min-height: 46px;
+        padding: 0 18px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        font: inherit;
+        font-weight: 650;
+        cursor: pointer;
+      }
+
+      a {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: var(--accent);
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      a:hover { background: var(--accent-hover); }
+
+      button {
+        display: none;
+        background: var(--panel);
+        color: var(--ink);
+      }
+
+      .ready a,
+      .offline button { display: inline-flex; }
+
+      .offline .spinner { display: none; }
+
+      @keyframes spin { to { transform: rotate(360deg); } }
+
+      @media (prefers-reduced-motion: reduce) {
+        .spinner { animation: none; }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          color-scheme: dark;
+          --page: #101715;
+          --panel: #17201e;
+          --ink: #f2f5f4;
+          --muted: #aebbb7;
+          --line: #34433f;
+          --accent: #6fc5af;
+          --accent-hover: #8bd3c0;
+          --soft: #233a34;
+        }
+
+        a { color: #10251f; }
+      }
+
+      @media (max-width: 560px) {
+        body { padding: 14px; }
+        main { padding: 32px 24px 30px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main id="entry">
+      <div class="brand"><span class="mark" aria-hidden="true"></span>Research Pulse</div>
+      <h1 id="title">正在连接</h1>
+      <p id="message">正在进入研究阅读与项目工作台。</p>
+      <div class="status" aria-live="polite">
+        <span class="spinner" aria-hidden="true"></span>
+        <span id="statusText">检查服务状态...</span>
+      </div>
+      <div class="actions">
+        <a id="openButton" href="#">进入 Research Pulse</a>
+        <button id="retryButton" type="button">重新连接</button>
+      </div>
+    </main>
+
+    <script>
+      const entry = document.getElementById("entry");
+      const title = document.getElementById("title");
+      const message = document.getElementById("message");
+      const statusText = document.getElementById("statusText");
+      const openButton = document.getElementById("openButton");
+      const retryButton = document.getElementById("retryButton");
+
+      function validTarget(value) {
+        try {
+          const url = new URL(value);
+          return url.protocol === "https:" && url.hostname.endsWith(".trycloudflare.com");
+        } catch (_) {
+          return false;
+        }
+      }
+
+      async function connect() {
+        entry.className = "";
+        title.textContent = "正在连接";
+        message.textContent = "正在进入研究阅读与项目工作台。";
+        statusText.textContent = "检查服务状态...";
+
+        try {
+          const response = await fetch(`./target.json?v=${Date.now()}`, { cache: "no-store" });
+          if (!response.ok) throw new Error("target unavailable");
+          const target = await response.json();
+          if (!validTarget(target.url)) throw new Error("invalid target");
+
+          entry.className = "ready";
+          title.textContent = "服务已就绪";
+          message.textContent = "即将自动进入 Research Pulse。";
+          statusText.textContent = "连接成功";
+          openButton.href = target.url;
+          window.setTimeout(() => window.location.replace(target.url), 650);
+        } catch (_) {
+          entry.className = "offline";
+          title.textContent = "服务暂时离线";
+          message.textContent = "主机恢复联网后，这个固定入口会自动恢复。";
+          statusText.textContent = "目前无法连接";
+        }
+      }
+
+      retryButton.addEventListener("click", connect);
+      connect();
+    </script>
+  </body>
+</html>
