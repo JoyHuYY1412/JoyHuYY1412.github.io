@@ -187,7 +187,10 @@
       function validTarget(value) {
         try {
           const url = new URL(value);
-          return url.protocol === "https:" && url.hostname.endsWith(".trycloudflare.com");
+          return url.protocol === "https:" && (
+            url.hostname.endsWith(".trycloudflare.com") ||
+            url.hostname.endsWith(".ngrok-free.app")
+          );
         } catch (_) {
           return false;
         }
@@ -206,9 +209,9 @@
           if (!validTarget(target.url)) throw new Error("invalid target");
 
           entry.className = "ready";
-          title.textContent = "服务已就绪";
+          title.textContent = "正在进入";
           message.textContent = "即将自动进入 Research Pulse。";
-          statusText.textContent = "连接成功";
+          statusText.textContent = "已找到当前服务";
           openButton.href = target.url;
           window.setTimeout(() => window.location.replace(target.url), 650);
         } catch (_) {
@@ -216,6 +219,7 @@
           title.textContent = "服务暂时离线";
           message.textContent = "主机恢复联网后，这个固定入口会自动恢复。";
           statusText.textContent = "目前无法连接";
+          window.setTimeout(connect, 30000);
         }
       }
 
