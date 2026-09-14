@@ -183,16 +183,57 @@
       const statusText = document.getElementById("statusText");
       const openButton = document.getElementById("openButton");
       const retryButton = document.getElementById("retryButton");
+      const stableFallbackTarget = "https://poppy-playing-rocking.ngrok-free.dev";
+      const targetCacheKey = "research-pulse-target";
 
       function validTarget(value) {
         try {
           const url = new URL(value);
           return url.protocol === "https:" && (
             url.hostname.endsWith(".trycloudflare.com") ||
-            url.hostname.endsWith(".ngrok-free.app")
+            url.hostname.endsWith(".ngrok-free.app") ||
+            url.hostname.endsWith(".ngrok-free.dev")
           );
         } catch (_) {
           return false;
+        }
+      }
+
+      function wait(milliseconds) {
+        return new Promise((resolve) => window.setTimeout(resolve, milliseconds));
+      }
+
+      async function fetchPublishedTarget() {
+        let lastError;
+        for (let attempt = 0; attempt < 3; attempt += 1) {
+          try {
+            const response = await fetch(`./target.json?v=${Date.now()}`, { cache: "no-store" });
+            if (!response.ok) throw new Error("target unavailable");
+            const target = await response.json();
+            if (!validTarget(target.url)) throw new Error("invalid target");
+            return target.url;
+          } catch (error) {
+            lastError = error;
+            if (attempt < 2) await wait(350 * (attempt + 1));
+          }
+        }
+        throw lastError;
+      }
+
+      async function resolveTarget() {
+        try {
+          const url = await fetchPublishedTarget();
+          try {
+            window.localStorage.setItem(targetCacheKey, url);
+          } catch (_) {}
+          return url;
+        } catch (_) {
+          try {
+            const cached = window.localStorage.getItem(targetCacheKey);
+            if (validTarget(cached)) return cached;
+          } catch (_) {}
+          if (validTarget(stableFallbackTarget)) return stableFallbackTarget;
+          throw new Error("no valid target");
         }
       }
 
@@ -203,17 +244,14 @@
         statusText.textContent = "检查服务状态...";
 
         try {
-          const response = await fetch(`./target.json?v=${Date.now()}`, { cache: "no-store" });
-          if (!response.ok) throw new Error("target unavailable");
-          const target = await response.json();
-          if (!validTarget(target.url)) throw new Error("invalid target");
+          const targetUrl = await resolveTarget();
 
           entry.className = "ready";
           title.textContent = "正在进入";
           message.textContent = "即将自动进入 Research Pulse。";
           statusText.textContent = "已找到当前服务";
-          openButton.href = target.url;
-          window.setTimeout(() => window.location.replace(target.url), 650);
+          openButton.href = targetUrl;
+          window.setTimeout(() => window.location.replace(targetUrl), 650);
         } catch (_) {
           entry.className = "offline";
           title.textContent = "服务暂时离线";
