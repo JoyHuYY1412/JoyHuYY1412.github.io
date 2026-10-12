@@ -181,7 +181,6 @@ footer { width: 232px; float: left; position: fixed; bottom: 30px; -webkit-font-
   animation: news-twinkle 2.4s ease-in-out infinite;
 }
 
-.news-cta { font-weight: 600; }
 .news-cta:hover, .news-cta:focus-visible { text-decoration: underline; }
 
 @keyframes news-shimmer {
