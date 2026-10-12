@@ -1,15 +1,17 @@
-<h2 style="margin: 60px 0px 10px;">News</h2>
+<h2 id="news" style="margin: 60px 0px 10px;">News</h2>
 
 <ul>
 <!-- <li><strong>[Mar. 2026]</strong> I will serve as an Area Chair of NeurIPS 2026. </li> -->
+<li class="news-highlight"><strong>[Oct. 2026]</strong> <span class="news-badge"><span class="news-sparkle" aria-hidden="true">✦</span> NEW</span> <strong>Veda for faster video generation!</strong> Our MiniMax-H3 preview models are available with ComfyUI support and have reached <strong>16K+ downloads in a month</strong>. <a class="news-cta" href="https://huggingface.co/Veda-Sparse">Try Veda on Hugging Face <span aria-hidden="true">↗</span></a> or explore the <a href="https://veda.hanxiao.run/">online demo</a>.</li>
 <li><strong>[Sep. 2026]</strong> I will teach 电子信息类开放实践课 in Fall 2026, starting on September 21. </li>
 <li><strong>[Aug. 2026]</strong> I will serve as an Area Chair for ICLR 2027. </li>
+<li><strong>[May. 2026]</strong> I was recognized as a <strong>Gold Reviewer for ICML 2026</strong>. </li>
 <li><strong>[May. 2026]</strong> Three papers on <a href="https://veda-sparse.github.io/">efficient video diffusion</a>, <a href="https://semanticnvs.github.io/">novel view synthesis</a>, and <a href="https://junchao-cs.github.io/LIVE-demo/">interactive video world modeling</a> were accepted by ICML 2026. </li>
 <li><strong>[Jan. 2026]</strong> Our papers for unlearning and RL got accepted by ICLR! </li>
 <li><strong>[Jan. 2026]</strong> Our <a href="https://t2i-corebench.github.io/">benchmark paper</a> for T2I got accepted by ICLR! Keep up-to-date <a href="https://t2i-corebench.github.io/">here</a>! </li>
 <li><strong>[Nov. 2025]</strong> I will host a Workshop about Next Generation VideGen, NeurIPS 2025. Check <a href="https://what-makes-good-video.github.io/">this</a>! </li>
 <li><strong>[Oct. 2025]</strong> I am selected as a Top Reviewer for NeurIPS 2025. </li>
-<li><strong>[Sep. 2025]</strong> I will serve as an Area Chair of ICLR 2025. </li>
+<li><strong>[Sep. 2025]</strong> I will serve as an Area Chair of ICLR 2026. </li>
 <li><strong>[Sep. 2025]</strong> Our <a href="https://arxiv.org/abs/2505.16707">benchmark paper</a> for Reasoning-based Image Editing is accepted by NeurIPS 2025 DB track. </li>
 <li><strong>[Aug. 2025]</strong> Our <a href="https://arxiv.org/abs/2506.10507">paper</a> for Training-Free 3D Asset Editing is accepted by ICCV 2025. </li>
 <li><strong>[Jun. 2025]</strong> I am selected as an Outstanding Reviewer for CVPR 2025. </li>
