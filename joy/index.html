@@ -2,18 +2,30 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
     <meta name="robots" content="noindex">
-    <title>JOY · 永久入口</title>
+    <title>JOY 研究平台 · 固定入口</title>
     <style>
       :root {
-        --page: #f4f6f5;
+        --bg: #f2f4f7;
         --panel: #ffffff;
-        --ink: #17211f;
-        --muted: #5a6b66;
-        --line: #d7dfdc;
-        --accent: #176b5b;
-        --accent-hover: #105548;
+        --ink: #111419;
+        --muted: #475467;
+        --line: #d5dce6;
+        --accent: #245fc4;
+        --accent-soft: #eef4ff;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0b0f17;
+          --panel: #111827;
+          --ink: #f8fafc;
+          --muted: #94a3b8;
+          --line: #1e293b;
+          --accent: #3b82f6;
+          --accent-soft: #172554;
+        }
       }
       * { box-sizing: border-box; }
       body {
@@ -22,31 +34,43 @@
         display: grid;
         place-items: center;
         padding: 20px;
-        background: var(--page);
+        background: var(--bg);
         color: var(--ink);
         font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
       }
       main {
-        width: min(100%, 520px);
-        padding: 34px 32px 30px;
+        width: min(100%, 480px);
+        padding: 32px 28px;
         border: 1px solid var(--line);
         border-radius: 14px;
         background: var(--panel);
-        box-shadow: 0 18px 46px rgb(30 51 46 / 8%);
+        box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
       }
       .badge {
         display: inline-block;
         padding: 4px 10px;
         border-radius: 999px;
-        background: #e9f2ef;
-        color: var(--accent);
         font-size: 12px;
         font-weight: 600;
-        margin-bottom: 12px;
+        background: var(--accent-soft);
+        color: var(--accent);
       }
-      h1 { margin: 0 0 8px; font-size: 22px; }
-      p { margin: 0 0 18px; color: var(--muted); font-size: 14px; line-height: 1.6; }
-      .routes { display: grid; gap: 10px; margin-top: 16px; }
+      h1 {
+        margin: 14px 0 8px;
+        font-size: 22px;
+        line-height: 1.3;
+      }
+      p {
+        margin: 0 0 20px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+      .routes {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
       .route-btn {
         display: flex;
         align-items: center;
@@ -54,7 +78,7 @@
         padding: 13px 16px;
         border-radius: 10px;
         border: 1px solid var(--line);
-        background: #f9fbfa;
+        background: transparent;
         color: var(--ink);
         text-decoration: none;
         font-size: 14px;
@@ -65,41 +89,106 @@
         border-color: var(--accent);
         color: #fff;
       }
+      .meta {
+        margin-top: 16px;
+        font-size: 12px;
+        color: var(--muted);
+      }
     </style>
   </head>
   <body>
     <main>
-      <span class="badge">JOY 永久固定入口</span>
-      <h1 id="title">正在进入 JOY…</h1>
-      <p id="message">正在自动跳转到当前在线的 Cloudflare 免拦截直连隧道（无需加载 Ngrok 拦截页）。</p>
+      <span class="badge">JOY 综合研究平台 · 永久固定入口</span>
+      <h1 id="title">正在检测最快免代理线路…</h1>
+      <p id="message">自动在主备双加密隧道中选择当前网络（5G / 校外宽带 / 校园网）延迟最低的线路直接进入。</p>
       <div class="routes">
-        <a id="cfBtn" class="route-btn primary" href="https://passed-karma-nurse-mba.trycloudflare.com">
-          <span>🌐 立即进入 JOY（Cloudflare 免拦截直连）</span>
-          <span>直达 →</span>
+        <a id="cfBtn" class="route-btn primary" href="#">
+          <span>🌐 线路一：Cloudflare 主线路（免拦截）</span>
+          <span id="cfState">检测中…</span>
+        </a>
+        <a id="lhrBtn" class="route-btn" href="#" style="display:none">
+          <span>⚡ 线路二：SSH 独立域名备用线路（免拦截）</span>
+          <span id="lhrState">检测中…</span>
         </a>
         <a id="localBtn" class="route-btn" href="http://localhost:3000">
           <span>💻 Mac 本机直连（http://localhost:3000）</span>
-          <span>本机最快 →</span>
+          <span>本机零延迟 →</span>
         </a>
       </div>
+      <div class="meta" id="metaText">正在读取最新在线地址…</div>
     </main>
     <script>
-      async function start() {
+      (async function () {
+        const params = new URLSearchParams(window.location.search);
+        const subPath = params.get("to") || "";
         const cfBtn = document.getElementById("cfBtn");
-        let targetUrl = cfBtn.href;
+        const lhrBtn = document.getElementById("lhrBtn");
+        const cfState = document.getElementById("cfState");
+        const lhrState = document.getElementById("lhrState");
+        const title = document.getElementById("title");
+        const message = document.getElementById("message");
+        const metaText = document.getElementById("metaText");
+
+        function withSub(base) {
+          if (!base) return "#";
+          const clean = base.replace(/\/$/, "");
+          if (!subPath) return clean + "/";
+          return clean + (subPath.startsWith("/") ? subPath : "/" + subPath);
+        }
+
+        async function probe(base, labelEl) {
+          if (!base) throw new Error("empty");
+          const t0 = performance.now();
+          const ctrl = new AbortController();
+          const timer = setTimeout(() => ctrl.abort(), 5500);
+          try {
+            const r = await fetch(base.replace(/\/$/, "") + "/api/health?t=" + Date.now(), {
+              mode: "cors",
+              cache: "no-store",
+              signal: ctrl.signal
+            });
+            clearTimeout(timer);
+            if (!r.ok) throw new Error("bad status");
+            const ms = Math.round(performance.now() - t0);
+            if (labelEl) labelEl.textContent = ms + "ms 直达 →";
+            return base;
+          } catch (e) {
+            clearTimeout(timer);
+            if (labelEl) labelEl.textContent = "点击尝试 →";
+            throw e;
+          }
+        }
+
         try {
           const res = await fetch("./target.json?v=" + Date.now(), { cache: "no-store" });
-          if (res.ok) {
-            const data = await res.json();
-            if (data && data.url && data.url.includes(".trycloudflare.com")) {
-              targetUrl = data.url;
-              cfBtn.href = targetUrl;
-            }
+          if (!res.ok) throw new Error("target fetch failed");
+          const data = await res.json();
+          const cfUrl = data.url || "";
+          const backupUrl = data.backupUrl || "";
+          if (cfUrl) cfBtn.href = withSub(cfUrl);
+          if (backupUrl) {
+            lhrBtn.style.display = "flex";
+            lhrBtn.href = withSub(backupUrl);
           }
-        } catch (_) {}
-        window.location.replace(targetUrl);
-      }
-      start();
+          if (data.updatedAt) {
+            metaText.textContent = "节点更新时间：" + data.updatedAt;
+          }
+
+          const candidates = [];
+          if (cfUrl) candidates.push(probe(cfUrl, cfState));
+          if (backupUrl) candidates.push(probe(backupUrl, lhrState));
+
+          if (candidates.length) {
+            const fastest = await Promise.any(candidates);
+            title.textContent = "已连通最快线路，正在进入 JOY…";
+            window.location.replace(withSub(fastest));
+            return;
+          }
+        } catch (_) {
+          title.textContent = "请选择线路进入 JOY";
+          message.textContent = "自动测速超时，可直接点击下方任一在线线路进入。";
+        }
+      })();
     </script>
   </body>
 </html>
