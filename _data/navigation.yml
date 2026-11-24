@@ -4,6 +4,9 @@ main:
     url: talks/
     right: true 
 
+  - title: "Blog"
+    url: blog/
+
   - title: "Teaching"
     url: teaching/
 
