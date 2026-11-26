@@ -2,6 +2,7 @@
 
 <ul>
 <!-- <li><strong>[Mar. 2026]</strong> I will serve as an Area Chair of NeurIPS 2026. </li> -->
+<li><strong>[Nov. 2026]</strong> I will serve as an <strong>Area Chair</strong> for ICML 2027. </li>
 <li class="news-highlight"><strong>[Oct. 2026]</strong> <span class="news-badge"><span class="news-sparkle" aria-hidden="true">✦</span> NEW</span> <strong>Veda</strong> for faster video generation! Our MiniMax-H3 preview models are available with ComfyUI support and have reached <strong>16K+ downloads</strong> in a month. <a class="news-cta" href="https://huggingface.co/Veda-Sparse">Try Veda on Hugging Face <span aria-hidden="true">↗</span></a> or explore the <a href="https://veda.hanxiao.run/">online demo</a>.</li>
 <li><strong>[Sep. 2026]</strong> I will teach 电子信息类开放实践课 in Fall 2026, starting on September 21. </li>
 <li><strong>[Aug. 2026]</strong> I will serve as an <strong>Area Chair</strong> for ICLR 2027. </li>
