@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>香港中文大学多模态与世界模型研讨会笔记 | Xinting Hu | University of Science and Technology of China</title>
+  <link rel="icon" href="../../assets/img/myfavicon.ico" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Ubuntu+Mono&family=Source+Sans+3:wght@400;600;700&display=swap" />
+  <style>
+    :root {
+      --global-bg-color: #ffffff;
+      --global-theme-color: #13294B;
+      --global-link-color: #3399cc;
+      --global-link-hover: #006699;
+    }
+    * { box-sizing: border-box; }
+    body {
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+      color: #333333;
+      font: 16px/1.75 "Crimson Pro", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    html[data-lang="en"] body {
+      font: 17.5px/1.68 "Crimson Pro", Georgia, serif;
+      color: #333333;
+    }
+    html[data-lang="en"] .lang-zh { display: none !important; }
+    html[data-lang="zh"] .lang-en { display: none !important; }
+
+    /* Exact Homepage Top Navigation Bar (#13294B) */
+    .topnav {
+      background-color: #13294B;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .topnav-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 18px;
+      min-height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .topnav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #f2f2f2;
+      font-family: "Crimson Pro", serif;
+      font-size: 17px;
+    }
+    .topnav-brand img {
+      width: 28px;
+      height: 28px;
+      filter: brightness(0) invert(1);
+    }
+    .topnav-right {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      flex-wrap: wrap;
+    }
+    .topnav a.normal {
+      color: #f2f2f2;
+      text-align: center;
+      padding: 10px 9px;
+      text-decoration: none;
+      font-family: "Crimson Pro", serif;
+      font-size: 17px;
+      line-height: 1.2;
+    }
+    .topnav a.normal:hover, .topnav a.normal.active-nav {
+      background-color: #dddddd;
+      color: #000000;
+    }
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .lang-toggle button {
+      background: transparent;
+      color: #f2f2f2;
+      border: none;
+      padding: 4px 9px;
+      font-family: "Source Sans 3", -apple-system, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      line-height: 1.2;
+    }
+    .lang-toggle button.active {
+      background: #ffffff;
+      color: #13294B;
+    }
+    .finder-nav-btn {
+      display: none;
+      margin-left: 8px;
+      background: transparent;
+      color: #f2f2f2;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 3px;
+      padding: 3px 8px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .finder-nav-btn:hover {
+      background: #ffffff;
+      color: #13294B;
+    }
+
+    /* Homepage Wrapper & Two-Column Academic Layout */
+    .wrapper {
+      width: 1040px;
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+    header.blog-sidebar {
+      width: 215px;
+      float: left;
+      position: fixed;
+      top: 46px;
+      padding-top: 2.4em;
+      max-height: calc(100vh - 60px);
+      overflow-y: auto;
+    }
+    .sidebar-profile {
+      text-align: center;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #e5e5e5;
+      margin-bottom: 14px;
+    }
+    .sidebar-profile img {
+      border-radius: 100%;
+      width: 96px;
+      height: 96px;
+      object-fit: cover;
+      margin-bottom: 8px;
+    }
+    .sidebar-profile h1 {
+      font-family: "Crimson Pro", serif;
+      font-size: 23px;
+      font-weight: 500;
+      color: #13294B;
+      margin: 0 0 4px;
+      line-height: 1.15;
+    }
+    .sidebar-pos {
+      font-family: "Crimson Pro", serif;
+      font-size: 15px;
+      color: #595959;
+      line-height: 1.35;
+    }
+    .sidebar-email {
+      font-family: "Ubuntu Mono", monospace;
+      font-size: 12.5px;
+      color: #595959;
+      margin-top: 3px;
+    }
+    .toc-heading {
+      font-family: "Ubuntu Mono", monospace;
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #777777;
+      margin-bottom: 8px;
+    }
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 14px;
+      font-size: 13.8px;
+      line-height: 1.45;
+    }
+    .toc-list li {
+      margin-bottom: 6px;
+    }
+    .toc-list a {
+      color: #595959;
+      text-decoration: none;
+      display: block;
+      padding: 2px 0;
+    }
+    .toc-list a:hover {
+      color: #13294B;
+      text-decoration: underline;
+    }
+    .back-blog-link {
+      font-size: 13.5px;
+      color: #3399cc;
+      text-decoration: none;
+      border-top: 1px solid #e5e5e5;
+      padding-top: 10px;
+      display: block;
+    }
+    .back-blog-link:hover { color: #006699; text-decoration: underline; }
+
+    section.blog-main {
+      width: 755px;
+      float: right;
+      padding-top: 5.0em;
+      padding-bottom: 70px;
+    }
+
+    /* Article Typography matching assets/css/style.css & pub.css */
+    a { color: #3399cc; text-decoration: none; }
+    a:hover { color: #006699; text-decoration: underline; }
+    strong { color: #1c1c1c; font-weight: 600; }
+
+    .post-header {
+      border-bottom: 1px solid #e5e5e5;
+      padding-bottom: 18px;
+      margin-bottom: 24px;
+    }
+    .post-meta {
+      font-family: "Ubuntu Mono", monospace;
+      font-size: 13px;
+      color: #777777;
+      margin-bottom: 8px;
+    }
+    .post-header h1 {
+      font-size: 27px;
+      font-weight: 600;
+      color: #13294B;
+      line-height: 1.32;
+      margin: 0 0 12px;
+    }
+    html[data-lang="en"] .post-header h1 {
+      font-size: 30px;
+      line-height: 1.24;
+    }
+    .post-lead {
+      font-size: 15.5px;
+      color: #595959;
+      margin: 0;
+      line-height: 1.68;
+    }
+    html[data-lang="en"] .post-lead {
+      font-size: 17px;
+    }
+
+    section.blog-main h2 {
+      color: #13294B;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1.3;
+      margin: 2.4em 0 0.75em;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e5e5e5;
+      scroll-margin-top: 64px;
+    }
+    html[data-lang="en"] section.blog-main h2 {
+      font-size: 24px;
+    }
+    section.blog-main h3 {
+      color: #13294B;
+      font-weight: 600;
+      font-size: 17.5px;
+      line-height: 1.38;
+      margin: 1.6em 0 0.55em;
+    }
+    html[data-lang="en"] section.blog-main h3 {
+      font-size: 19.5px;
+    }
+    section.blog-main p {
+      margin: 0 0 15px;
+    }
+    section.blog-main ul, section.blog-main ol {
+      margin: 0 0 18px;
+      padding-left: 1.35em;
+    }
+    section.blog-main li {
+      margin-bottom: 8px;
+    }
+
+    code {
+      font-family: "Ubuntu Mono", Monaco, Consolas, monospace;
+      font-size: 0.88em;
+      background: #f8f8f8;
+      padding: 1px 5px;
+      border-radius: 3px;
+      border: 1px solid #e5e5e5;
+      color: #333333;
+    }
+
+    /* Section Goal & Challenge Box matching pub.css blockquote */
+    blockquote.goal-box {
+      background: #fafbfc;
+      border-left: 3px solid #13294B;
+      margin: 14px 0 20px;
+      padding: 11px 16px;
+      font-style: normal;
+      font-size: 14.8px;
+      line-height: 1.66;
+      color: #3d3d3d;
+    }
+    html[data-lang="en"] blockquote.goal-box {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    blockquote.goal-box p {
+      margin: 0 0 6px;
+    }
+    blockquote.goal-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Equations */
+    .eq-wrap {
+      background: #fcfcfd;
+      border-left: 2px solid #13294B;
+      padding: 10px 16px;
+      margin: 16px 0;
+      overflow-x: auto;
+    }
+    .eq-wrap .katex-display { margin: 0.2em 0; font-size: 0.96em; }
+
+    /* High-Resolution Figures + Lightbox */
+    .fig-card {
+      margin: 20px 0 24px;
+      padding: 12px 14px 10px;
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+    }
+    .fig-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      cursor: zoom-in;
+      image-rendering: -webkit-optimize-contrast;
+    }
+    .fig-card.fig-medium img {
+      max-width: 78%;
+    }
+    .fig-card figcaption {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid #f0f0f0;
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: #595959;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    html[data-lang="en"] .fig-card figcaption {
+      font-size: 14.8px;
+    }
+    .fig-actions {
+      display: inline-flex;
+      gap: 5px;
+      flex: none;
+    }
+
+    /* Homepage .btn style from assets/css/pub.css */
+    .btn {
+      color: #000000;
+      background: #ffffff;
+      border: 1px solid #000000;
+      padding: 2px 8px;
+      font-family: "Source Sans 3", -apple-system, sans-serif;
+      font-size: 11.5px;
+      line-height: 1.35;
+      cursor: pointer;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .btn:hover {
+      color: #13294B;
+      border-color: #13294B;
+      background: #f5f7fa;
+    }
+
+    /* Clean Academic Tables matching style.css */
+    .tbl-wrap {
+      margin: 22px 0 26px;
+      border-top: 1.5px solid #13294B;
+      border-bottom: 1.5px solid #13294B;
+      overflow-x: auto;
+      background: #ffffff;
+    }
+    .tbl-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 4px;
+      border-bottom: 1px solid #e5e5e5;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #13294B;
+    }
+    html[data-lang="en"] .tbl-bar {
+      font-size: 15px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px 10px;
+      border-bottom: 1px solid #eaeaea;
+      vertical-align: top;
+      font-size: 13.8px;
+      line-height: 1.56;
+      color: #333333;
+    }
+    html[data-lang="en"] th, html[data-lang="en"] td {
+      font-size: 15px;
+    }
+    tr:last-child td { border-bottom: none; }
+    th {
+      color: #13294B;
+      font-weight: 600;
+      background: #fafbfc;
+      border-bottom: 1px solid #d5dbe3;
+    }
+
+    /* Lightbox Modal for High-Res Figure Inspection */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(15, 23, 42, 0.88);
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      cursor: zoom-out;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 95vw;
+      max-height: 92vh;
+      background: #ffffff;
+      padding: 10px;
+      border-radius: 4px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+      object-fit: contain;
+    }
+
+    @media print, screen and (max-width: 1040px) {
+      .wrapper { width: auto; }
+      header.blog-sidebar, section.blog-main {
+        float: none;
+        position: static;
+        width: auto;
+      }
+      header.blog-sidebar {
+        padding-top: 66px;
+        max-height: none;
+        border-bottom: 1px solid #e5e5e5;
+        margin-bottom: 16px;
+      }
+      .sidebar-profile { display: flex; align-items: center; gap: 14px; text-align: left; }
+      .sidebar-profile img { width: 56px; height: 56px; margin-bottom: 0; }
+      section.blog-main { padding-top: 10px; }
+      .fig-card.fig-medium img { max-width: 100%; }
+    }
+  
+    .svg-card {
+      margin: 20px 0 24px;
+      padding: 14px 16px 10px;
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+    }
+    .svg-card svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .svg-card figcaption {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid #f0f0f0;
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: #595959;
+    }
+    html[data-lang="en"] .svg-card figcaption {
+      font-size: 14.8px;
+    }
+    .qa-box {
+      background: #f8fafc;
+      border-left: 2.5px solid #3399cc;
+      margin: 14px 0 20px;
+      padding: 10px 15px;
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: #3d3d3d;
+    }
+    html[data-lang="en"] .qa-box {
+      font-size: 15.8px;
+      line-height: 1.58;
+    }
+    .qa-box p {
+      margin: 0 0 6px;
+    }
+    .qa-box p:last-child {
+      margin-bottom: 0;
+    }
+    .speaker-meta {
+      font-family: "Ubuntu Mono", monospace;
+      font-size: 12.5px;
+      color: #666666;
+      margin: -4px 0 12px;
+    }
+    .scope-note {
+      font-size: 13.8px;
+      color: #595959;
+      background: #fafbfc;
+      border: 1px solid #e5e5e5;
+      border-radius: 3px;
+      padding: 10px 14px;
+      margin: 16px 0 22px;
+      line-height: 1.62;
+    }
+    html[data-lang="en"] .scope-note {
+      font-size: 15px;
+    }
+
+  </style>
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var qLang = params.get("lang");
+      var saved = (qLang === "en" || qLang === "zh") ? qLang : (localStorage.getItem("xh_blog_lang") || "zh");
+      document.documentElement.setAttribute("data-lang", saved);
+      document.documentElement.setAttribute("lang", saved === "en" ? "en-US" : "zh-CN");
+    })();
+  </script>
+</head>
+<body>
+
+  <div class="topnav">
+    <div class="topnav-inner">
+      <a class="topnav-brand" href="https://en.ustc.edu.cn/" rel="noopener">
+        <img src="../../assets/img/ustc_logo.svg" alt="USTC logo" />
+      </a>
+      <div class="topnav-right">
+        <a class="normal" href="../../">Home</a>
+        <a class="normal" href="../../publications/">Publications</a>
+        <a class="normal" href="https://data-science.ustc.edu.cn/main.htm" target="_blank" rel="noopener">Group</a>
+        <a class="normal" href="../../teaching/">Teaching</a>
+        <a class="normal active-nav" href="../">Blog</a>
+        <a class="normal" href="../../talks/">Posts</a>
+        <div class="lang-toggle" title="Switch Language / 切换语言">
+          <button type="button" id="btn-zh" onclick="setLang('zh')">中文</button>
+          <button type="button" id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+        <button type="button" id="local-finder-btn" class="finder-nav-btn" onclick="openInFinder()">📂 Finder</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <header class="blog-sidebar">
+      <div class="sidebar-profile">
+        <a href="../../"><img src="../../assets/profile.png" alt="Xinting Hu" /></a>
+        <div>
+          <h1>Xinting Hu</h1>
+          <div class="sidebar-pos">Professor, USTC</div>
+          <div class="sidebar-email">xinting@ustc.edu.cn</div>
+        </div>
+      </div>
+
+      <div class="toc-heading">
+        <span class="lang-zh">目录 · Contents</span>
+        <span class="lang-en">Contents</span>
+      </div>
+      <ul class="toc-list lang-zh">
+        <li><a href="#sec-overview-zh">0. 研讨会背景与总览</a></li>
+        <li><a href="#sec-limits-zh">1. 可靠性与数据边界</a></li>
+        <li><a href="#sec-physics-zh">2. 物理表征与混合世界模型</a></li>
+        <li><a href="#sec-deploy-zh">3. 交互推演与真实落地</a></li>
+        <li><a href="#sec-synthesis-zh">4. 跨报告对比与判断</a></li>
+      </ul>
+      <ul class="toc-list lang-en">
+        <li><a href="#sec-overview-en">0. Context &amp; Overview</a></li>
+        <li><a href="#sec-limits-en">1. Reliability &amp; Data Limits</a></li>
+        <li><a href="#sec-physics-en">2. Physical 4D &amp; Hybrid Sim</a></li>
+        <li><a href="#sec-deploy-en">3. Interaction &amp; Deployment</a></li>
+        <li><a href="#sec-synthesis-en">4. Synthesis &amp; Takeaways</a></li>
+      </ul>
+
+      <a class="back-blog-link" href="../">
+        <span class="lang-zh">← 返回 Blog 列表</span>
+        <span class="lang-en">← All Blog Posts</span>
+      </a>
+    </header>
+
+    <section class="blog-main">
+      <article id="blog-article">
+        <div class="lang-zh">
+  <div class="post-header">
+    <div class="post-meta">[Nov. 2026] &nbsp;·&nbsp; Xinting Hu &nbsp;·&nbsp; World Models · Embodied AI · 4D Vision · Surgical Robotics</div>
+    <h1>香港中文大学多模态与世界模型研讨会笔记：物理表征、闭环交互与落地边界</h1>
+    <p class="post-lead">
+      整理自 2026 年 8 月 15–16 日香港中文大学 LaVi Lab 主办的 <a href="https://lavi-lab.github.io/symposium2026/" target="_blank" rel="noopener">Multi-Modal and World Model Symposium 2026</a> 七场特邀报告现场转写，涵盖 David Forsyth、Jiajun Wu、Xiaojuan Qi、Bolei Zhou、Huaizu Jiang、Zhuowen Tu 与 Qi Dou 的技术脉络、现场问答与跨报告观察。
+    </p>
+  </div>
+
+  <div class="scope-note">
+    <strong>记录范围说明</strong>：本笔记基于研讨会现场七场报告的语音转写整理，讲者姓名、单位与议程时段已对照<a href="https://lavi-lab.github.io/symposium2026/" target="_blank" rel="noopener">香港中文大学官方研讨会日程</a>核对，关键代表工作补充了公开论文链接。部分报告的转写仅覆盖正文主体与问答环节，文中所有实验数字与观点均严格忠于现场表述，不推断未收录片段。
+  </div>
+
+  <!-- ==================== 0. 会议背景与总览 ==================== -->
+  <section id="sec-overview-zh">
+    <h2>0. 研讨会背景与七场报告总览</h2>
+
+    <p>
+      2026 年 8 月 15 至 16 日，香港中文大学计算机科学与工程学系 LaVi Lab 在郑裕彤楼主办了为期两天的 <strong>Multi-Modal and World Model Symposium 2026</strong>，聚焦多模态大模型、计算机视觉与世界模型如何走向物理智能与具身智能。听完这两天记录下的七场报告，最突出的感受不是各家模型指标的增量，而是不同方向学者在底层方法论上的意外收敛：<strong>纯端到端像素生成尚不足以支撑可靠控制，显式物理结构、混合仿真架构、闭环纠错与有边界的模块化落地，正在重新成为核心议题。</strong>
+    </p>
+
+    
+<figure class="svg-card">
+  <svg viewBox="0 0 740 278" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="七场报告技术关系示意图">
+    <defs>
+      <marker id="arr-zh" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 1 L 10 5 L 0 9 z" fill="#7a8ca5" />
+      </marker>
+    </defs>
+    <rect x="6" y="10" width="166" height="258" rx="4" fill="#fafbfc" stroke="#d9e0ea" />
+    <rect x="192" y="10" width="174" height="258" rx="4" fill="#fafbfc" stroke="#d9e0ea" />
+    <rect x="386" y="10" width="168" height="258" rx="4" fill="#fafbfc" stroke="#d9e0ea" />
+    <rect x="574" y="10" width="160" height="258" rx="4" fill="#f5f8fb" stroke="#b9c9dd" />
+
+    <text x="89" y="33" text-anchor="middle" font-size="11.5" font-weight="700" fill="#13294B">一、可靠性与数据边界</text>
+    <text x="279" y="33" text-anchor="middle" font-size="11.5" font-weight="700" fill="#13294B">二、物理表征与世界模型</text>
+    <text x="470" y="33" text-anchor="middle" font-size="11.5" font-weight="700" fill="#13294B">三、闭环交互与自进化</text>
+    <text x="654" y="33" text-anchor="middle" font-size="11.5" font-weight="700" fill="#13294B">四、真实场景与临床落地</text>
+
+    <rect x="16" y="48" width="146" height="96" rx="3" fill="#ffffff" stroke="#cbd5e1" />
+    <text x="24" y="67" font-size="11" font-weight="700" fill="#13294B">David Forsyth · UIUC</text>
+    <text x="24" y="86" font-size="10" fill="#475569">航空级失效界限缺位</text>
+    <text x="24" y="103" font-size="10" fill="#475569">设计—测试—修复闭环</text>
+    <text x="24" y="120" font-size="10" fill="#475569">低资源与边缘 Scaling 边界</text>
+
+    <rect x="16" y="156" width="146" height="100" rx="3" fill="#ffffff" stroke="#cbd5e1" />
+    <text x="24" y="175" font-size="11" font-weight="700" fill="#13294B">Zhuowen Tu · UCSD</text>
+    <text x="24" y="194" font-size="10" fill="#475569">合成数据等价与边际递减</text>
+    <text x="24" y="211" font-size="10" fill="#475569">自回归统一图文布局序列</text>
+    <text x="24" y="228" font-size="10" fill="#475569">理解—生成循环自奖励</text>
+    <text x="24" y="245" font-size="9.5" fill="#777777">依赖强预训练防坍缩</text>
+
+    <rect x="202" y="48" width="154" height="102" rx="3" fill="#ffffff" stroke="#cbd5e1" />
+    <text x="210" y="67" font-size="11" font-weight="700" fill="#13294B">Jiajun Wu · Stanford</text>
+    <text x="210" y="86" font-size="10" fill="#475569">可微渲染归纳偏置</text>
+    <text x="210" y="103" font-size="10" fill="#475569">4D SDS · 刚度与流体场</text>
+    <text x="210" y="120" font-size="10" fill="#475569">物理模拟 + 视频渲染</text>
+    <text x="210" y="137" font-size="9.5" fill="#006699">物理中间表征作因果接口</text>
+
+    <rect x="202" y="162" width="154" height="94" rx="3" fill="#ffffff" stroke="#cbd5e1" />
+    <text x="210" y="181" font-size="11" font-weight="700" fill="#13294B">Xiaojuan Qi · HKU</text>
+    <text x="210" y="200" font-size="10" fill="#475569">深度—法向约束与合成真值</text>
+    <text x="210" y="217" font-size="10" fill="#475569">3DGSR（隐式表面 + 3DGS）</text>
+    <text x="210" y="234" font-size="10" fill="#475569">运动基低秩稀疏动态约束</text>
+    <text x="210" y="249" font-size="9.5" fill="#777777">显式 3D 与视频双路线</text>
+
+    <rect x="396" y="48" width="148" height="96" rx="3" fill="#ffffff" stroke="#cbd5e1" />
+    <text x="404" y="67" font-size="11" font-weight="700" fill="#13294B">Huaizu Jiang · NEU</text>
+    <text x="404" y="86" font-size="10" fill="#475569">StreamForce 统一力表示</text>
+    <text x="404" y="103" font-size="10" fill="#475569">双向教师 → 因果流式学生</text>
+    <text x="404" y="120" font-size="10" fill="#475569">实时动态变力物理推演</text>
+
+    <rect x="396" y="156" width="148" height="100" rx="3" fill="#ffffff" stroke="#cbd5e1" />
+    <text x="404" y="175" font-size="11" font-weight="700" fill="#13294B">Xiaojuan Qi · Agent</text>
+    <text x="404" y="194" font-size="10" fill="#475569">误差自适应 Action Chunk</text>
+    <text x="404" y="211" font-size="10" fill="#475569">在线 Critic 失败重规划</text>
+    <text x="404" y="228" font-size="10" fill="#475569">离线经验记忆巩固</text>
+    <text x="404" y="245" font-size="9.5" fill="#006699">抬升底层策略成功率上限</text>
+
+    <rect x="584" y="48" width="140" height="98" rx="3" fill="#ffffff" stroke="#9db5d1" />
+    <text x="592" y="67" font-size="11" font-weight="700" fill="#13294B">Bolei Zhou · UCLA</text>
+    <text x="592" y="86" font-size="10" fill="#475569">UrbanSim · Vid2Sim</text>
+    <text x="592" y="103" font-size="10" fill="#475569">UrbanVerse 10万+ 资产</text>
+    <text x="592" y="120" font-size="10" fill="#475569">单目 RGB 跨形态导航</text>
+    <text x="592" y="137" font-size="9.5" fill="#006699">图形打底 + 世界重渲染</text>
+
+    <rect x="584" y="158" width="140" height="98" rx="3" fill="#ffffff" stroke="#9db5d1" />
+    <text x="592" y="177" font-size="11" font-weight="700" fill="#13294B">Qi Dou · CUHK</text>
+    <text x="592" y="196" font-size="10" fill="#475569">外科医生“第三只手”</text>
+    <text x="592" y="213" font-size="10" fill="#475569">血管夹闭成功率超 95%</text>
+    <text x="592" y="230" font-size="10" fill="#475569">活体猪与遗体验证</text>
+    <text x="592" y="247" font-size="9.5" fill="#777777">直面医生技能退化困境</text>
+
+    <line x1="173" y1="140" x2="190" y2="140" stroke="#7a8ca5" stroke-width="1.4" marker-end="url(#arr-zh)" />
+    <line x1="367" y1="140" x2="384" y2="140" stroke="#7a8ca5" stroke-width="1.4" marker-end="url(#arr-zh)" />
+    <line x1="555" y1="140" x2="572" y2="140" stroke="#7a8ca5" stroke-width="1.4" marker-end="url(#arr-zh)" />
+  </svg>
+  <figcaption>
+    <strong>图 1（示意）</strong>：七场报告按研究层次的逻辑关联。从左至右依次为可靠性与数据边界、显式物理与三维世界表征、闭环交互与自进化策略，以及城市导航与临床手术两类真实部署场景。本图仅反映这七场报告之间的结构呼应，不涵盖研讨会全部议程。
+  </figcaption>
+</figure>
+
+
+    <div class="tbl-wrap">
+      <div class="tbl-bar">
+        <span>表 1 · 研讨会七场报告议程与核心内容总览</span>
+        <button class="btn" onclick="copyTable('tbl-1-zh', this)">📋 复制表格</button>
+      </div>
+      <table id="tbl-1-zh">
+        <thead>
+          <tr>
+            <th style="min-width:105px">时间</th>
+            <th style="min-width:130px">讲者与单位</th>
+            <th style="min-width:155px">报告主线</th>
+            <th>代表方法、数据与现场关键判断</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>8月15日<br/>09:15–10:00</td>
+            <td><strong>David Forsyth</strong><br/>UIUC · Keynote</td>
+            <td>神经网络可靠性与 Scaling 确认偏误</td>
+            <td>以航空飞控与工程事故史为参照，指出当前模型缺乏紧致失效概率界限与“设计—测试—修复”闭环，并点出低资源数据与边缘算力受限两类 Scaling 失效域</td>
+          </tr>
+          <tr>
+            <td>8月15日<br/>10:05–10:35</td>
+            <td><strong>Jiajun Wu</strong><br/>Stanford</td>
+            <td>4D 物理世界表征与基础模型接口</td>
+            <td>可微渲染自监督、CVAE 形变分布、4D SDS 蒸馏非均质杨氏模量场与流体速度场，提出物理模拟器与视频模型结合的混合仿真架构，将物理表征定位为因果接口</td>
+          </tr>
+          <tr>
+            <td>8月15日<br/>10:40–11:10</td>
+            <td><strong>Xiaojuan Qi</strong><br/>HKU</td>
+            <td>数字世界构建与自进化具身智能体</td>
+            <td><strong>3DGSR</strong> 隐式表面耦合 3DGS、运动基低秩稀疏动态约束；低层以预测误差动态调节 Action Chunk 长度；高层以在线 Critic 纠错重规划加离线经验巩固提升上限</td>
+          </tr>
+          <tr>
+            <td>8月16日<br/>10:25–10:55</td>
+            <td><strong>Bolei Zhou</strong><br/>UCLA</td>
+            <td>人行道自主导航仿真与跨形态部署</td>
+            <td><strong>UrbanSim</strong> 交互评测、<strong>Vid2Sim</strong> 单视频重建、<strong>UrbanVerse</strong> 场景图变体与 10 万+ 物理尺度 3D 资产；单目 RGB 导航基础模型 ProPilot 迁移至轮式车、Go2 与电动轮椅</td>
+          </tr>
+          <tr>
+            <td>8月16日<br/>11:00–11:30</td>
+            <td><strong>Huaizu Jiang</strong><br/>Northeastern</td>
+            <td>StreamForce 流式力控视频世界模型</td>
+            <td>统一局部推拨与全局风力表示，基于动态变力合成数据与自动化真实配对管线，将双向 ControlNet 教师蒸馏为支持生成途中实时调力的因果流式学生模型</td>
+          </tr>
+          <tr>
+            <td>8月16日<br/>14:00–14:45</td>
+            <td><strong>Zhuowen Tu</strong><br/>UCSD · Keynote</td>
+            <td>合成数据等价价值与自回归多模态闭环</td>
+            <td>定量刻画合成图与真实图的训练等价比例及边际递减规律；主张自回归统一文本—布局—图像序列，以理解—生成循环一致性构造无标注自奖励</td>
+          </tr>
+          <tr>
+            <td>8月16日<br/>14:50–15:20</td>
+            <td><strong>Qi Dou</strong><br/>CUHK</td>
+            <td>临床模块化自主手术与人机协作</td>
+            <td>纯无菌内窥镜视觉驱动“外科医生第三只手”，实现纱布抓取、组织牵拉与 5 mm 内血管夹闭超 95% 成功率，完成活体猪与遗体验证并直面医生技能退化困境</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ==================== 1. 可靠性缺口与数据边界 ==================== -->
+  <section id="sec-limits-zh">
+    <h2>1. 可靠性缺口与数据边界：David Forsyth 与 Zhuowen Tu</h2>
+
+    <blockquote class="goal-box">
+      <p><strong>共同问题</strong>：当数据规模与算力扩张成为主流共识，神经网络距离安全关键工程部署还缺什么，合成数据与自监督闭环的真实能力边界又在哪里。</p>
+      <p><strong>核心判断</strong>：两位主旨讲者从工程哲学与统计实验两个侧面给出冷静锚点——可靠性差距在于缺乏可验证的失效界限与测试闭环，而合成数据与循环自训练均无法脱离高质量真实分布与强预训练初始化独立成立。</p>
+    </blockquote>
+
+    <h3>1.1 David Forsyth：航空级可靠性理论与 Scaling 确认偏误</h3>
+    <div class="speaker-meta">Aug. 15, 09:15–10:00 · Keynote Talk · University of Illinois Urbana-Champaign</div>
+
+    <p>
+      David Forsyth 的讨论切中深度学习长期回避的一个根本问题：人们是否愿意乘坐一架按照当前神经网络研发方式制造的飞机。他指出，<strong>真正的分歧并不在于保障究竟是确定性的还是概率性的</strong>，概率性保证本身完全可以接受，但现有深度学习理论给出的随机界限过于宽松，只能充当数据量与参数量的粗略经验参考，远未紧致到能够量化“一百年失败一次还是一千年失败一次”的工程级标准。当前的惯常做法是先搭系统训练、表现好便总结其能力清单，却缺少反向理论保证某一构建与训练流程必然产出预期行为。
+    </p>
+
+    <p>
+      从工程学科史来看，欧洲大教堂在没有成熟结构力学理论的年代便已建成，人们依靠飞扶壁等经验构造与可观测检修完成修补；大型软件则已很难建成后再随手打补丁，因此飞行控制系统从架构第一天起就遵循“面向可测试性设计”的原则。神经网络将这一困境推向更极端的状态：<strong>我们不仅无法确保它按预期运行，甚至尚未建立起如何充分测试它、定位故障并修复它的知识框架。</strong>Forsyth 援引“工程学的历史是用鲜血写成的”这一格言，提及塔科马海峡大桥坍塌与德哈维兰彗星客机金属疲劳事故，提醒学界关于新型智能系统的许多关键认知，很可能会在造成真实事故之后才被迫补齐。
+    </p>
+
+    <p>
+      针对“更多数据加更多 GPU 一切都会好起来”的流行叙事，他明确指出其中的<strong>确认偏误</strong>：学界反复讨论这套配方奏效的领域，却容易遗忘大量天然不适用 Scaling 的现实场景。他列举了两类典型边界：一是<strong>数据极度稀缺场景</strong>，例如存世文本极其有限的赫梯语、阿卡德语等低资源语言，以及样本极少甚至只有单张图像的专门视觉任务，大数据迁移虽有帮助却无法消除领域特殊性；二是<strong>算力与载荷强受限场景</strong>，例如需要长距离飞行的自主无人机，受限于重量与供电，不可能挂载高端桌面 GPU 与多块车用电池。
+    </p>
+
+    <h3>1.2 Zhuowen Tu：合成数据定量等价价值与自回归循环自监督</h3>
+    <div class="speaker-meta">Aug. 16, 14:00–14:45 · Keynote Talk · University of California, San Diego</div>
+
+    <p>
+      Zhuowen Tu 围绕合成数据的真实价值与统一多模态架构展开报告。对于合成图像能否替代真实数据，他给出了审慎判断：未来 10 至 15 年内，生成模型可能依然无法真正捕捉自然图像底层的真实流形，合成图与真实图在底层统计特性上仍存在本质差距。但“不够真实”不等于没有训练价值，因此关键问题应当从定性争论“合成数据有没有用”，转向定量刻画在闭集条件下<strong>多少张合成样本等价于一定数量的真实样本</strong>。
+    </p>
+
+    <p>
+      围绕这一问题，团队在闭集与开集设置下得出三条明确的经验规律。第一，<strong>理解模型越强，获得同等性能增益所需的合成数据规模越大</strong>，模型越接近当前数据上限，合成增强的边际收益越低。第二，在不引入任何外部数据知识的严格<strong>闭集合成增强</strong>设置下，生成数据依然能稳定提升分类器性能，在部分条件下甚至优于使用外部数据的开集方案，并随真实训练集扩大保持良好扩展性。第三，<strong>一旦固定基础真实训练集规模，单纯把合成数据放大至多倍会迅速出现边际收益递减</strong>，证明合成数据并不能无上限堆叠。
+    </p>
+
+    <p>
+      在统一多模态基础模型的架构选择上，Zhuowen Tu 更看好<strong>自回归模型</strong>而非扩散模型，原因在于扩散语言模型在诸多任务上的竞争力仍不及自回归语言模型，而自回归框架能够把文本、空间布局与图像块直接编码为同一序列，用统一的下一 Token 预测目标同时建模理解与生成。不过他通过客厅精细布局与“5 只狗加 3 只猫”的数量测试指出，包括 NanoBanana 在内的主流强图像生成模型目前擅长做到<strong>语义上看起来合理</strong>，却依然不擅长严格执行空间布局与精确计数等结构化约束。
+    </p>
+
+    <p>
+      为此，团队提出利用<strong>理解—生成循环一致性</strong>在无标注数据上构造自奖励信号：从真实图像出发经由预测布局与描述再重建图像，或从给定布局出发生成图像再反向预测布局，将首尾差异直接转化为训练反馈，使理解与生成互为监督。
+    </p>
+
+    <div class="qa-box">
+      <p><strong>现场问答 · 全支撑假设与防坍缩边界</strong>：听众追问循环一致理论是否隐含分布支撑覆盖全空间的强假设，毕竟合成图像在自然图像流形上的像素概率可能近乎为零。Zhuowen Tu 确认理论确实要求处处非零概率，因此团队并未直接在高维像素空间估计分布，而是为每张图提取约 10,000 个统计特征并构建 20 个分箱的直方图表示，使微小像素扰动仅带来连续平滑变化。另一位听众进一步询问循环一致性是否能从理论上证明不会发生模型坍缩，他坦承<strong>目前没有理论保证</strong>，该方法与多数强化学习后训练类似，必须依赖足够强的预训练模型作为初始化，适合作为强基座上的自改进信号，而非独立的正确性验证器。</p>
+    </div>
+  </section>
+
+  <!-- ==================== 2. 显式物理表征与混合世界模型 ==================== -->
+  <section id="sec-physics-zh">
+    <h2>2. 显式物理表征与混合式世界模型：Jiajun Wu 与 Xiaojuan Qi</h2>
+
+    <blockquote class="goal-box">
+      <p><strong>共同问题</strong>：互联网视频与基础模型拥有极强的视觉先验，却缺乏精确的三维几何、材质力学与动作因果约束；传统图形重建与物理仿真可控性强，却难以覆盖开放世界的视觉多样性。</p>
+      <p><strong>核心判断</strong>：两场报告从不同技术路径收敛至同一核心结论——深度、光流、隐式表面、运动基与物理属性场不再只是传统视觉的预测终点，而是连接、约束并控制视频基础模型的结构化因果接口。</p>
+    </blockquote>
+
+    <h3>2.1 Jiajun Wu：4D 物理世界表征作为基础模型的因果接口</h3>
+    <div class="speaker-meta">Aug. 15, 10:05–10:35 · Online Talk · Stanford University</div>
+
+    <p>
+      Jiajun Wu 从“视觉即逆图形学”这一经典视角切入，指出我们观测到的像素源于底层的几何、材质与运动表征，但与海量无标注互联网图像视频相比，带有精确物理标注的数据极其稀缺。为此，团队系统推进了多条结合物理先验与生成基础模型的路线：
+    </p>
+
+    <ul>
+      <li><strong>以可微前向过程作自监督归纳偏置</strong>：将渲染前向过程设为可微并约束自编码器的结构化潜变量，仅利用涵盖约 100 类四足动物的无标注互联网图像训练单一模型，即可在测试时从单张图像恢复几何、纹理、反射属性乃至可驱动的骨骼关节绑定。</li>
+      <li><strong>学习静态物体的形变概率分布</strong>：仅用条件变分自编码器与条件编码器两个网络，结合形变场重建损失与 KL 散度对齐，即可让模型仅凭静态三维网格采样多种可能形变，单一模型覆盖笔记本电脑开合、耳机、显示器与 U 盘等多类物体。</li>
+      <li><strong>4D 分数蒸馏采样与物理属性场蒸馏</strong>：将 3D Score Distillation Sampling 推广至 4D 视频扩散模型，借助空间分层控制点、时间维树状数组结构与时空平滑正则稳定优化。进一步在 <a href="https://arxiv.org/abs/2404.13026" target="_blank" rel="noopener">PhysDreamer</a> 等工作中从视频先验蒸馏非均质物体的空间变化刚度场，并在多校合作的 <a href="https://arxiv.org/abs/2503.04720" target="_blank" rel="noopener">FluidNexus</a> 中从单段视频同步恢复三维流体的外观密度场与物理速度场，支持多视角渲染及左侧吹风等外力反事实预测。</li>
+      <li><strong>生成模型提供近乎免费的机器人示范</strong>：利用语言条件视频模型合成人类或机械臂操作可形变物体的序列，无需人工标注即可自动提取稠密物体运动流作为模仿学习监督，在真实机器人上完成折叠布料等任务。</li>
+      <li><strong>物理模拟与视频模型结合的混合模拟器</strong>：面对多接触点交互难以直接输入视频模型的困境，先对单图做粗糙 3D 重建并送入物理模拟器产生粗粒度直觉物理运动，再将深度或光流变化作为条件输入视频基础模型渲染逼真多视角视频，并反过来优化底层 3D 物理表征，实现<strong>物理模拟器管运动正确、视频模型管画面真实</strong>。</li>
+    </ul>
+
+    <p>
+      他在总结中指出，即使今天不再需要为光流估计单独训练专用模型，深度、光流与物理属性这类中间表征依然极具价值：它们兼具<strong>跨物体通用性</strong>与<strong>天然因果性</strong>，一旦作为基础模型的交互接口，条件预测、反事实推理与可解释控制便水到渠成。
+    </p>
+
+    <div class="qa-box">
+      <p><strong>现场问答 · 自由度正则化难题</strong>：听众指出，一扇门或笔记本电脑盖的像素运动看似高维，底层自由度实则极低，只要定位铰链轴即可完整描述；而花朵等软体存在高维形变与次级运动，由此引发“如何自动正则化形变场维度”的问题。Jiajun Wu 坦承低自由度方法目前确实在刚体与关节物体上效果显著更好，而在花朵案例中效果更佳的版本实际转用了高维过参数化的杨氏模量场；<strong>如何避免一开始就强行过参数化，而是让模型自动发现每个物体真正需要的自由度数量与空间参数化密度</strong>，仍是尚未解决的核心开放问题。</p>
+    </div>
+
+    <h3>2.2 Xiaojuan Qi：几何约束 3DGS、世界生成双路线与自进化具身智能体</h3>
+    <div class="speaker-meta">Aug. 15, 10:40–11:10 · In-Person Talk · The University of Hong Kong</div>
+
+    <p>
+      Xiaojuan Qi 从其博士阶段的单目深度估计工作讲起，提炼出贯穿多代模型演进的两条长期经验：一是利用真实三维表面的<strong>深度—法向几何约束</strong>作为结构归纳偏置；二是当真实传感器采集的深度真值含噪时，利用游戏引擎生成完美合成真值训练出的模型在精度与干净度上可反超 KITTI 真实数据，这两条经验在当今基础模型时代依然有效。
+    </p>
+
+    <p>
+      围绕将连续三维世界离散化为可交互数字世界这一主线，她系统梳理了表征、生成与智能体交互三个层次的进展：
+    </p>
+
+    <ul>
+      <li><strong>从外观渲染走向几何与动态约束</strong>：原始 3D Gaussian Splatting 擅长新视角外观渲染，却缺乏几何表面约束，且动态场景下若允许每个高斯点自由运动，过高自由度极易过拟合训练帧而无法还原真实轨迹。团队一方面提出 <a href="https://arxiv.org/abs/2404.00409" target="_blank" rel="noopener">3DGSR</a>，以隐式符号距离表面约束高斯分布位置与法向，兼顾外观保真与准确几何；另一方面构造低秩稀疏的<strong>运动基与邻域控制点插值</strong>驱动动态高斯，并结合分割基础模型实现场景物体级编辑，同时通过软硬件协同探索降低渲染能耗。</li>
+      <li><strong>显式 3D 与视频世界模型的互补分工</strong>：单纯重建存在视角遮挡与多样性局限，因此需走向世界生成。视频世界模型贴近人类连续视觉感知，更适合动作建模；显式 3D 世界则结构清晰可控，适合构建可复现基准与主动合成罕见极端案例。理想形态同样是<strong>显式 3D 控制几何、视角与物理规律，视频模型承担逼真视觉渲染</strong>。</li>
+      <li><strong>误差驱动的自适应动作块低层策略</strong>：传统世界动作模型采用固定长度的 Action Chunk，简单阶段效率偏低、精细阶段又易累积误差。受人类“简单快做、困难慢做”启发，团队以世界模型预测画面与真实执行观测之间的<strong>一致性误差作为在线反馈</strong>：一致时拉长动作块加速推进，进入精细插拔等高不确定阶段一旦检测偏差，立即提前终止当前动作块并高频重规划。</li>
+      <li><strong>在线 Critic 与离线巩固构成的双层自进化 Agent</strong>：系统外层引入反思与纠错模块 Critic，将单次执行允许容错的重规划闭环接入不完美的低层策略，证明 Agent 的价值不止于长程任务分解，更能<strong>直接抬升低层策略的最终成功率上限</strong>。离线阶段则类比人类睡眠时的记忆巩固机制，由数据整理器与技能生成器把部署积累的交互经验重新内化为可复用技能与更新后的策略权重，形成持续演化循环。</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 3. 交互式视频推演与真实场景部署 ==================== -->
+  <section id="sec-deploy-zh">
+    <h2>3. 交互式视频推演与真实场景部署：Bolei Zhou、Huaizu Jiang 与 Qi Dou</h2>
+
+    <blockquote class="goal-box">
+      <p><strong>共同问题</strong>：当世界模型与具身策略真正走出基准测试，进入夜间行人穿梭的人行道、实时可干预的物理视频流或无菌腹腔镜手术室，算力、传感器、可归因性与人类协作边界会如何重塑技术路线。</p>
+      <p><strong>核心判断</strong>：三场报告分别展示了从真实痛点反推技术架构的典型路径——产业部署倾向用图形仿真加世界模型重渲染确保可控归因，视频世界模型正从静态条件走向因果流式交互，而高风险临床场景则以“第三只手”与模块化自主务实破局。</p>
+    </blockquote>
+
+    <h3>3.1 Bolei Zhou：人行道自主导航的仿真体系、资产扩展与跨形态部署</h3>
+    <div class="speaker-meta">Aug. 16, 10:25–10:55 · Online Talk · University of California, Los Angeles</div>
+
+    <p>
+      Bolei Zhou 以其担任技术顾问的洛杉矶配送机器人公司 Coco Robotics 为现实切入点：尽管已有超一千台小型配送车在校园和街道运行，自主化程度依然很低，背后大多依赖人类远程遥操作。受限于小型车体的算力与电池容量，设备无法搭载昂贵的多颗激光雷达，只能依靠<strong>纯单目 RGB 视觉</strong>在夜间、复杂天气、障碍物、行人与宠物交织的人行道上穿行。
+    </p>
+
+    <p>
+      面向“真实部署前如何低成本、公平地评估与后训练众多导航模型”这一核心问题，团队构建了一条步步递进的仿真与训练体系：
+    </p>
+
+    <ul>
+      <li><strong>UrbanSim 交互单元测试平台</strong>：针对 CARLA 场景丰富但 CPU 仿真慢、NVIDIA Isaac Sim 效率高但缺少城市人行道资产的缺口，基于 Isaac Sim 构建高保真城市环境，支持轮式配送车、人形机器人与轮椅同场运行，并内置行人挡路、路边交谈绕行、正面会车协商及红绿灯过斑马线等单元测试，横向评测九种导航模型。</li>
+      <li><strong><a href="https://arxiv.org/abs/2501.06693" target="_blank" rel="noopener">Vid2Sim</a> 视频转交互世界与空间扫描</strong>：为缩小 Sim-to-Real 差距，以单目深度与表面法向估计作几何伪标签约束 3DGS 重建，将单段人行道视频转化为可叠加显式三维行人与风格光照的交互仿真器，经强化学习训练实现单目 RGB 零样本避障迁移。针对普通手机视频对动态物体敏感的问题，团队进一步引入融合激光雷达与 RGB 的空间相机扩大校园街景扫描规模。</li>
+      <li><strong><a href="https://arxiv.org/abs/2510.15018" target="_blank" rel="noopener">UrbanVerse</a> 从数字孪生走向场景变体生成</strong>：一段视频若只能复刻一个世界，规模化成本依然过高。UrbanVerse 先从单段视频提取抽象的<strong>三维场景图与空间布局</strong>，再替换不同三维物体实例生成大量仿真变体。为避免拼接出“和消防栓一样大的交通锥”，团队利用 ChatGPT 结合多视角渲染图标注质量、尺寸与材质，并发现其在大型卡车重量等物理属性上反而比容易低估重量的人工标注者更准，最终向社区开源了<strong>超过 10 万个真实物理尺度对齐的 3D 资产</strong>。</li>
+      <li><strong>视频预训练加仿真 RL 后训练与跨形态迁移</strong>：参照大语言模型范式，先在海量人类示范视频上做被动模仿预训练，再放入交互仿真环境中通过强化学习主动探索后训练；所构建的导航基础模型 ProPilot 经不同本体数据微调，已部署于轮式配送车、Unitree Go2 四足机器人以及面向老年人与残障人士的改装电动轮椅。</li>
+    </ul>
+
+    <div class="qa-box">
+      <p><strong>现场问答 · 仿真错误的归因难题与协同演化</strong>：听众以演示画面中行人局部缺脚为例追问，当仿真存在瑕疵时，如何区分“会被策略钻空子的致命错误”与“无关紧要的渲染伪影”。Bolei Zhou 坦言，纯数据驱动世界模型引入大量学习参数后，确实极难判断失败源于仿真器还是策略本身；缺脚问题正来自人体与静态背景分路重建后的遮挡与足地接触瑕疵。因此无论是实验室还是公司落地，都更倾向采用<strong>混合路线</strong>——以 Isaac Sim 掌控确定性的物理结构，仅用世界模型重渲染视觉外观，并对输出运行目标检测回检是否与初始条件一致。另一位听众进一步提出，策略优化器往往“太聪明”以致专钻仿真漏洞，或许可通过鲁棒优化有意让控制器搜索“笨一点”；Bolei Zhou 回应指出，未来更有前景的方向是将可训练的行为驱动世界模型与策略进行<strong>协同训练</strong>，使仿真器与策略共同演化。</p>
+    </div>
+
+    <h3>3.2 Huaizu Jiang：StreamForce 流式动态力控交互视频世界模型</h3>
+    <div class="speaker-meta">Aug. 16, 11:00–11:30 · Online Talk · Northeastern University</div>
+
+    <p>
+      Huaizu Jiang 报告了团队围绕“物理外力作为视频世界模型交互接口”的最新进展 <a href="https://arxiv.org/abs/2606.07508" target="_blank" rel="noopener">StreamForce</a>，该工作由第一作者 Hanhui Wang 在研讨会现场交流，并获 SIGGRAPH Asia 2026 录用。此前 Force Prompting 虽验证了用风力或推力控制视频生成的可行性，但存在两项核心瓶颈：不同类别的力需要维护多套独立模型，且力条件在视频开始生成前即被固定，无法随时间动态调整。
+    </p>
+
+    <p>
+      <strong>StreamForce 将静态力提示升级为实时因果交互闭环</strong>：用户可先施加微弱风力观察烟雾运动，发现尚未抵达探测器后实时加大风力或改变方向，驱动后续帧持续演化；对桌面物体亦可先后从不同位置推拨，逐步将其移动至目标虚线区域。其关键技术包含三部分：一是设计<strong>统一力表示</strong>，以单一模型同时支持局部推拨与全局风力；二是构造包含外力随时间改变方向与大小的<strong>动态变力数据</strong>，实验表明这类数据对提升连续运动追踪至关重要；三是采用类似 Self-Forcing 的两阶段蒸馏，先用合成恒力与变力数据通过 ControlNet 训练双向教师模型，再通过自动化数据管线从真实图像和视频构造“图像 + 外力 + 未来视频”配对样本，蒸馏出按时间顺序流式生成的<strong>因果学生模型</strong>。
+    </p>
+
+    <p>
+      值得注意的是，模型并未被显式灌输物理公式，却从数据中隐式学出了开放域刚体受力的合理动力学。Huaizu Jiang 同时明确了下一步的三项挑战：从简单力交互扩展至更丰富的动作空间，从刚性物体迈向<strong>可变形物体与流体动力学</strong>，以及引入新的<strong>记忆机制</strong>以在长时程多轮交互中维持世界状态一致。
+    </p>
+
+    <h3>3.3 Qi Dou：临床模块化自主手术机器人与“第三只手”范式</h3>
+    <div class="speaker-meta">Aug. 16, 14:50–15:20 · In-Person Talk · The Chinese University of Hong Kong</div>
+
+    <p>
+      Qi Dou 从真实微创手术室的工作流痛点切入，展示了与香港本土研发、已获中国 NMPA、欧洲 CE 及新加坡监管批准的手术机器人平台的系统集成工作。在达芬奇式腹腔镜机器人中，系统通常包含一条内窥镜臂与三条操作机械臂，但主刀医生只有两只手，不得不频繁踩下脚踏板在机械臂之间切换，不仅增加操作负担，也使学习曲线比传统开放手术更为陡峭。
+    </p>
+
+    <p>
+      因此，团队并未追求一步到位取代外科医生，而是提出更具临床现实性的<strong>“AI 作为外科医生第三只手”与模块化自主路线</strong>：
+    </p>
+
+    <ul>
+      <li><strong>纯无菌内窥镜视觉驱动与零改造交互</strong>：不引入额外侵入式临床传感器，直接读取高清高速内窥镜画面驱动第三条操作臂；保留脚踏板处理快速确定性切换，直接复用现有控制台自带的医护通话麦克风，通过语音指令完成 AI 模块的启停与选择。</li>
+      <li><strong>类比自动泊车的模块化自主验证</strong>：聚焦安全边界清晰、可跨术式复用的子任务，在明暗光照变化与染血外观干扰下验证纱布抓取、软组织牵拉维持手术张力，以及直径 5 mm 以内小血管夹闭（准确率与成功率均<strong>超过 95%</strong>）。系统已完成仿真、动物组织、<strong>10 次以上活体猪实验与 2 次遗体完整胆囊切除流程验证</strong>，并计划年内推进首次人体临床试验，未来可拓展至胃部与结直肠癌手术。</li>
+      <li><strong>手术专用基础模型与数据现实</strong>：团队测试表明，通用多模态模型在专业手术动作预测上精度远未达标，而当前机器人领域热门的 <strong>VLA 范式在手术机器人中尚未产出公认的成功案例</strong>。手术机器人本质上是高精度遥操作系统，并不缺乏成对的 3D 手术视频与精确运动学数据，真正瓶颈在于临床数据清洗标注、长时程操作尚未收敛且当前仍主要集中攻克常规场景而未进入极端 Corner Cases 阶段，以及面向不同外科医生习惯的眼动意图预测与个性化持续适应。</li>
+    </ul>
+
+    <div class="qa-box">
+      <p><strong>现场问答 · 年轻医生技能退化与外科“手感”量化</strong>：听众提出一个极具穿透力的担忧——传统外科培训依赖年轻医生从简单重复步骤练起，而自主手术恰恰最先接管这些低风险基础环节，是否会切断初学者成长路径。Qi Dou 坦言这是真实且紧迫的难题：达芬奇手术本身已减少了初级医生动手机会，而在医学影像领域，已能观察到长期依赖 AI 的年轻放射科医生在撤去 AI 后对早期癌征置信度下降、漏诊率上升的<strong>技能退化（deskilling）</strong>现象，目前整个医学 AI 社区刚刚开始系统讨论，尚无收敛解法。谈及长期价值时，她认为短期内 AI 辅助主要带来提效与降本，但长远而言，团队正联合传感方向研究者把顶级外科医生难以言传的<strong>“手感”</strong>（如安全拉力、位移边界与组织受损阈值）转化为可测量、可计算的标准平台；一旦 AI 成为手术不可分割的组件，其稳定性与安全性最终必须超越普通人类医生。</p>
+    </div>
+  </section>
+
+  <!-- ==================== 4. 跨报告对比与核心判断 ==================== -->
+  <section id="sec-synthesis-zh">
+    <h2>4. 跨报告对比与四点核心判断</h2>
+
+    <div class="tbl-wrap">
+      <div class="tbl-bar">
+        <span>表 2 · 七场报告的技术机制、验证闭环与开放瓶颈对比</span>
+        <button class="btn" onclick="copyTable('tbl-2-zh', this)">📋 复制表格</button>
+      </div>
+      <table id="tbl-2-zh">
+        <thead>
+          <tr>
+            <th style="min-width:110px">讲者</th>
+            <th style="min-width:155px">核心表征或模型形态</th>
+            <th style="min-width:170px">监督、反馈与验证闭环</th>
+            <th>现场明确指出的主要瓶颈</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>David Forsyth</strong></td>
+            <td>通用神经网络与安全关键系统</td>
+            <td>缺乏航空级紧致概率界限与可测试框架</td>
+            <td>故障定位与修复闭环缺位；低资源与边缘端 Scaling 失效</td>
+          </tr>
+          <tr>
+            <td><strong>Jiajun Wu</strong></td>
+            <td>4D 物理场、形变分布与混合模拟器</td>
+            <td>可微渲染重建、4D SDS 蒸馏与多视角反哺</td>
+            <td>低维铰链自由度与高维软体场的自适应维度发现</td>
+          </tr>
+          <tr>
+            <td><strong>Xiaojuan Qi</strong></td>
+            <td>3DGSR、低秩运动基、自适应 WAM 与 Agent</td>
+            <td>预测误差调节动作块、在线 Critic 与离线巩固</td>
+            <td>显式 3D 与视频世界融合中的物理一致性与渲染能耗</td>
+          </tr>
+          <tr>
+            <td><strong>Bolei Zhou</strong></td>
+            <td>UrbanSim、Vid2Sim 3DGS 与 UrbanVerse 场景图</td>
+            <td>交互单元测试、仿真 RL 后训练与目标检测回检</td>
+            <td>纯世界模型难以归因仿真误差与策略误差；动态遮挡伪影</td>
+          </tr>
+          <tr>
+            <td><strong>Huaizu Jiang</strong></td>
+            <td>StreamForce 统一力控因果视频模型</td>
+            <td>双向教师蒸馏至因果学生、流式调力闭环</td>
+            <td>可变形体与流体动力学建模；长时程交互记忆一致性</td>
+          </tr>
+          <tr>
+            <td><strong>Zhuowen Tu</strong></td>
+            <td>闭集合成增强与自回归多模态序列</td>
+            <td>理解—生成循环一致性无标注自奖励</td>
+            <td>合成数据边际收益递减；循环自训练无防坍缩理论保证</td>
+          </tr>
+          <tr>
+            <td><strong>Qi Dou</strong></td>
+            <td>内窥镜视觉模块化策略与手术 VLM</td>
+            <td>活体猪、遗体全术式验证与临床医生反馈迭代</td>
+            <td>长时程操作未收敛；VLA 落地空白；年轻医生技能退化</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      把两天七场报告放在同一坐标系下对照，可以提炼出四条值得后续课题规划持续跟踪的判断：
+    </p>
+
+    <p>
+      <strong>1. 混合式世界模型正在取代“纯像素端到端生成”，成为具身与三维领域的务实共识。</strong><br/>
+      Jiajun Wu 的物理模拟器加视频渲染、Xiaojuan Qi 的显式 3D 控制几何物理加视频生成、Bolei Zhou 在公司落地中坚持的 Isaac Sim 打底加世界模型重渲染与检测回检，三条独立脉络指向同一架构分工：<strong>结构化引擎负责可控性、物理一致与错误归因，生成模型负责填补视觉真实感与分布多样性。</strong>
+    </p>
+
+    <p>
+      <strong>2. 显式物理与低维结构化表征并未被大模型淘汰，而是升级为控制基础模型的接口。</strong><br/>
+      无论是作为因果接口的深度、光流与非均质刚度场，还是抑制 3DGS 动态过拟合的隐式表面与运动基控制点，抑或是将复杂操作压缩为统一风力与推拨的力空间，核心思想一致：在数据驱动先验之外重新引入低维物理归纳偏置。如何让模型自动识别不同对象的真实自由度，避免在“刚体低维受限”与“软体高维过参数化”之间手工切换，是极具潜力的基础问题。
+    </p>
+
+    <p>
+      <strong>3. 自监督与自进化闭环的价值高度依赖两项前提：强预训练起点与外部校验机制。</strong><br/>
+      Zhuowen Tu 关于循环一致性可能坍缩的坦诚回应、Bolei Zhou 现场讨论的“优化器钻仿真漏洞”、Xiaojuan Qi 用在线 Critic 纠错并配合离线记忆巩固，共同说明闭环优化本身并非免检通行证。没有较强基座模型托底，自奖励容易锁死在错误一致态；没有独立 Critic、检测校验或与仿真器协同演化，强化学习会迅速放大环境缺陷。
+    </p>
+
+    <p>
+      <strong>4. 真实世界的规模化落地更依赖有边界的模块化协作，而非一步到位的完全自主。</strong><br/>
+      David Forsyth 警示的航空级失效理论缺口在短期内难以补齐，Bolei Zhou 的人行道单目低算力约束与 Qi Dou 的“自动泊车式”手术第三只手范式恰恰提供了现实解法：先将风险可控、边界清晰的局部子任务做到高可靠并嵌入人类工作流，再经由真实反馈、多维传感量化隐性经验与持续迭代提升自主等级，同时提前正视自动化带来的长期人类技能退化问题。
+    </p>
+  </section>
+</div>
+        <div class="lang-en">
+  <div class="post-header">
+    <div class="post-meta">[Nov. 2026] &nbsp;·&nbsp; Xinting Hu &nbsp;·&nbsp; World Models · Embodied AI · 4D Vision · Surgical Robotics</div>
+    <h1>Notes from the CUHK 2026 Multi-Modal and World Model Symposium: Physical Representations, Closed-Loop Interaction, and Engineering Limits</h1>
+    <p class="post-lead">
+      Technical notes synthesized from seven invited talks at the <a href="https://lavi-lab.github.io/symposium2026/" target="_blank" rel="noopener">Multi-Modal and World Model Symposium 2026</a> hosted by LaVi Lab at CUHK on August 15–16, 2026, covering David Forsyth, Jiajun Wu, Xiaojuan Qi, Bolei Zhou, Huaizu Jiang, Zhuowen Tu, and Qi Dou.
+    </p>
+  </div>
+
+  <div class="scope-note">
+    <strong>Coverage note</strong>: These notes are compiled from live audio transcripts of seven sessions attended during the symposium. Speaker names, affiliations, and schedule slots are verified against the <a href="https://lavi-lab.github.io/symposium2026/" target="_blank" rel="noopener">official CUHK symposium program</a>, and key representative papers are linked to their public arXiv pages. Several recordings begin mid-talk or focus on technical highlights and Q&amp;A; all reported numbers and claims remain strictly faithful to the recorded talks.
+  </div>
+
+  <!-- ==================== 0. Overview ==================== -->
+  <section id="sec-overview-en">
+    <h2>0. Symposium Context and Talk Overview</h2>
+
+    <p>
+      On August 15–16, 2026, the Language and Vision Lab at the Department of Computer Science and Engineering, The Chinese University of Hong Kong, hosted the two-day <strong>Multi-Modal and World Model Symposium 2026</strong> at the Cheng Yu Tung Building. Across the seven recorded talks spanning core machine learning theory, 4D physical modeling, streaming video world models, urban navigation, and surgical robotics, the most striking takeaway is a shared methodological convergence: <strong>pure pixel generation alone is not enough for reliable control; explicit physical structure, hybrid simulation, closed-loop error correction, and bounded modular deployment are returning to the center of the field.</strong>
+    </p>
+
+    
+<figure class="svg-card">
+  <svg viewBox="0 0 740 278" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Structural map of seven symposium talks">
+    <defs>
+      <marker id="arr-en" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 1 L 10 5 L 0 9 z" fill="#7a8ca5" />
+      </marker>
+    </defs>
+    <rect x="6" y="10" width="166" height="258" rx="4" fill="#fafbfc" stroke="#d9e0ea" />
+    <rect x="192" y="10" width="174" height="258" rx="4" fill="#fafbfc" stroke="#d9e0ea" />
+    <rect x="386" y="10" width="168" height="258" rx="4" fill="#fafbfc" stroke="#d9e0ea" />
+    <rect x="574" y="10" width="160" height="258" rx="4" fill="#f5f8fb" stroke="#b9c9dd" />
+
+    <text x="89" y="33" text-anchor="middle" font-size="11" font-weight="700" fill="#13294B">1. Reliability &amp; Data Limits</text>
+    <text x="279" y="33" text-anchor="middle" font-size="11" font-weight="700" fill="#13294B">2. Physical 3D/4D Worlds</text>
+    <text x="470" y="33" text-anchor="middle" font-size="11" font-weight="700" fill="#13294B">3. Closed-Loop Interaction</text>
+    <text x="654" y="33" text-anchor="middle" font-size="11" font-weight="700" fill="#13294B">4. Real-World Deployment</text>
+
+    <rect x="16" y="48" width="146" height="96" rx="3" fill="#ffffff" stroke="#cbd5e1" />
+    <text x="24" y="67" font-size="10.8" font-weight="700" fill="#13294B">David Forsyth · UIUC</text>
+    <text x="24" y="86" font-size="9.8" fill="#475569">Missing failure bounds</text>
+    <text x="24" y="103" font-size="9.8" fill="#475569">Design-test-repair gap</text>
+    <text x="24" y="120" font-size="9.8" fill="#475569">Low-data &amp; edge limits</text>
+
+    <rect x="16" y="156" width="146" height="100" rx="3" fill="#ffffff" stroke="#cbd5e1" />
+    <text x="24" y="175" font-size="10.8" font-weight="700" fill="#13294B">Zhuowen Tu · UCSD</text>
+    <text x="24" y="194" font-size="9.8" fill="#475569">Synthetic-real equivalence</text>
+    <text x="24" y="211" font-size="9.8" fill="#475569">Unified AR token sequence</text>
+    <text x="24" y="228" font-size="9.8" fill="#475569">Cycle self-reward loop</text>
+    <text x="24" y="245" font-size="9.3" fill="#777777">Needs strong pre-training</text>
+
+    <rect x="202" y="48" width="154" height="102" rx="3" fill="#ffffff" stroke="#cbd5e1" />
+    <text x="210" y="67" font-size="10.8" font-weight="700" fill="#13294B">Jiajun Wu · Stanford</text>
+    <text x="210" y="86" font-size="9.8" fill="#475569">Differentiable rendering prior</text>
+    <text x="210" y="103" font-size="9.8" fill="#475569">4D SDS · stiffness &amp; fluid</text>
+    <text x="210" y="120" font-size="9.8" fill="#475569">Physics sim + video model</text>
+    <text x="210" y="137" font-size="9.3" fill="#006699">Physics as causal interface</text>
+
+    <rect x="202" y="162" width="154" height="94" rx="3" fill="#ffffff" stroke="#cbd5e1" />
+    <text x="210" y="181" font-size="10.8" font-weight="700" fill="#13294B">Xiaojuan Qi · HKU</text>
+    <text x="210" y="200" font-size="9.8" fill="#475569">Depth-normal &amp; sim truth</text>
+    <text x="210" y="217" font-size="9.8" fill="#475569">3DGSR (SDF + 3DGS)</text>
+    <text x="210" y="234" font-size="9.8" fill="#475569">Low-rank motion basis</text>
+    <text x="210" y="249" font-size="9.3" fill="#777777">3D + video generation</text>
+
+    <rect x="396" y="48" width="148" height="96" rx="3" fill="#ffffff" stroke="#cbd5e1" />
+    <text x="404" y="67" font-size="10.8" font-weight="700" fill="#13294B">Huaizu Jiang · NEU</text>
+    <text x="404" y="86" font-size="9.8" fill="#475569">StreamForce unified force</text>
+    <text x="404" y="103" font-size="9.8" fill="#475569">Bi-dir teacher → causal</text>
+    <text x="404" y="120" font-size="9.8" fill="#475569">Time-varying force video</text>
+
+    <rect x="396" y="156" width="148" height="100" rx="3" fill="#ffffff" stroke="#cbd5e1" />
+    <text x="404" y="175" font-size="10.8" font-weight="700" fill="#13294B">Xiaojuan Qi · Agent</text>
+    <text x="404" y="194" font-size="9.8" fill="#475569">Adaptive action chunks</text>
+    <text x="404" y="211" font-size="9.8" fill="#475569">Online critic replanning</text>
+    <text x="404" y="228" font-size="9.8" fill="#475569">Offline skill consolidation</text>
+    <text x="404" y="245" font-size="9.3" fill="#006699">Lifts low-level ceiling</text>
+
+    <rect x="584" y="48" width="140" height="98" rx="3" fill="#ffffff" stroke="#9db5d1" />
+    <text x="592" y="67" font-size="10.8" font-weight="700" fill="#13294B">Bolei Zhou · UCLA</text>
+    <text x="592" y="86" font-size="9.8" fill="#475569">UrbanSim · Vid2Sim</text>
+    <text x="592" y="103" font-size="9.8" fill="#475569">UrbanVerse 100K assets</text>
+    <text x="592" y="120" font-size="9.8" fill="#475569">Monocular RGB ProPilot</text>
+    <text x="592" y="137" font-size="9.3" fill="#006699">Hybrid Isaac + world model</text>
+
+    <rect x="584" y="158" width="140" height="98" rx="3" fill="#ffffff" stroke="#9db5d1" />
+    <text x="592" y="177" font-size="10.8" font-weight="700" fill="#13294B">Qi Dou · CUHK</text>
+    <text x="592" y="196" font-size="9.8" fill="#475569">Surgeon's "third hand"</text>
+    <text x="592" y="213" font-size="9.8" fill="#475569">&gt;95% vessel clipping</text>
+    <text x="592" y="230" font-size="9.8" fill="#475569">Pig &amp; cadaver trials</text>
+    <text x="592" y="247" font-size="9.3" fill="#777777">Deskilling &amp; tactile feel</text>
+
+    <line x1="173" y1="140" x2="190" y2="140" stroke="#7a8ca5" stroke-width="1.4" marker-end="url(#arr-en)" />
+    <line x1="367" y1="140" x2="384" y2="140" stroke="#7a8ca5" stroke-width="1.4" marker-end="url(#arr-en)" />
+    <line x1="555" y1="140" x2="572" y2="140" stroke="#7a8ca5" stroke-width="1.4" marker-end="url(#arr-en)" />
+  </svg>
+  <figcaption>
+    <strong>Figure 1 (Schematic)</strong>: Logical grouping of the seven recorded talks across four layers, from reliability and data boundaries to physical 3D/4D world representations, closed-loop interaction, and real-world or clinical deployment. This diagram reflects the seven covered talks rather than the full symposium roster.
+  </figcaption>
+</figure>
+
+
+    <div class="tbl-wrap">
+      <div class="tbl-bar">
+        <span>Table 1 · Schedule and Core Themes of the Seven Recorded Talks</span>
+        <button class="btn" onclick="copyTable('tbl-1-en', this)">📋 Copy Table</button>
+      </div>
+      <table id="tbl-1-en">
+        <thead>
+          <tr>
+            <th style="min-width:105px">Slot</th>
+            <th style="min-width:130px">Speaker</th>
+            <th style="min-width:155px">Theme</th>
+            <th>Key Methods, Evidence, and Takeaways</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Aug. 15<br/>09:15–10:00</td>
+            <td><strong>David Forsyth</strong><br/>UIUC · Keynote</td>
+            <td>Neural Reliability &amp; Scaling Bias</td>
+            <td>Compares neural systems against flight control and engineering failure history; highlights loose probabilistic bounds, missing test-repair loops, and confirmation bias in low-data and edge-compute tasks</td>
+          </tr>
+          <tr>
+            <td>Aug. 15<br/>10:05–10:35</td>
+            <td><strong>Jiajun Wu</strong><br/>Stanford</td>
+            <td>4D Physical Representations &amp; Interfaces</td>
+            <td>Differentiable rendering priors, CVAE deformation fields, 4D SDS distilling heterogeneous stiffness and fluid velocity fields, and hybrid simulators linking physics engines with video models</td>
+          </tr>
+          <tr>
+            <td>Aug. 15<br/>10:40–11:10</td>
+            <td><strong>Xiaojuan Qi</strong><br/>HKU</td>
+            <td>Interactive Digital Worlds &amp; Self-Evolving Agents</td>
+            <td><strong>3DGSR</strong> pairing implicit surfaces with 3DGS, low-rank motion bases, prediction-error adaptive action chunks, and a two-tier loop combining online critic replanning with offline experience consolidation</td>
+          </tr>
+          <tr>
+            <td>Aug. 16<br/>10:25–10:55</td>
+            <td><strong>Bolei Zhou</strong><br/>UCLA</td>
+            <td>Sidewalk Autonomy &amp; Simulation Platforms</td>
+            <td><strong>UrbanSim</strong> interaction tests, <strong>Vid2Sim</strong> single-video 3DGS, <strong>UrbanVerse</strong> scene graphs with 100K+ metric-scale 3D assets, and monocular RGB <strong>ProPilot</strong> across delivery bots, Go2, and wheelchairs</td>
+          </tr>
+          <tr>
+            <td>Aug. 16<br/>11:00–11:30</td>
+            <td><strong>Huaizu Jiang</strong><br/>Northeastern</td>
+            <td>StreamForce Streaming Force Control</td>
+            <td>Unified local and global force representation with time-varying force data, distilling a bidirectional ControlNet teacher into a causal streaming student for interactive physical video rollouts</td>
+          </tr>
+          <tr>
+            <td>Aug. 16<br/>14:00–14:45</td>
+            <td><strong>Zhuowen Tu</strong><br/>UCSD · Keynote</td>
+            <td>Synthetic Equivalence &amp; AR Cycle Self-Reward</td>
+            <td>Quantifies synthetic-to-real sample equivalence and diminishing returns; argues for unified autoregressive text-layout-image sequences trained with understanding-generation cycle consistency</td>
+          </tr>
+          <tr>
+            <td>Aug. 16<br/>14:50–15:20</td>
+            <td><strong>Qi Dou</strong><br/>CUHK</td>
+            <td>Modular Autonomous Surgical Robotics</td>
+            <td>Sterile endoscope vision driving a surgeon's third hand across gauze pickup, tissue retraction, and &le;5 mm vessel clipping (&gt;95% success), validated on pigs and cadavers while confronting surgeon deskilling</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ==================== 1. Reliability & Data Limits ==================== -->
+  <section id="sec-limits-en">
+    <h2>1. Reliability Guarantees and Data Limits: David Forsyth &amp; Zhuowen Tu</h2>
+
+    <blockquote class="goal-box">
+      <p><strong>Shared question</strong>: As scaling data and compute dominates mainstream progress, what still separates neural networks from safety-critical engineering, and where do synthetic data and self-training loops hit their limits.</p>
+      <p><strong>Key judgment</strong>: Both keynotes anchor expectations in hard constraints. Neural engineering still lacks tight failure bounds and testable repair loops, while synthetic augmentation and cycle self-training remain bounded by real data scale and pre-trained initialization quality.</p>
+    </blockquote>
+
+    <h3>1.1 David Forsyth: Aviation-Grade Reliability and Confirmation Bias in Scaling</h3>
+    <div class="speaker-meta">Aug. 15, 09:15–10:00 · Keynote Talk · University of Illinois Urbana-Champaign</div>
+
+    <p>
+      David Forsyth framed the reliability challenge around a blunt test: whether anyone would board an airplane built the way neural networks are currently constructed. In his view, <strong>the core issue is not deterministic versus stochastic guarantees</strong>. Probabilistic guarantees are acceptable in principle, yet existing statistical bounds are far too loose to specify whether a system fails once in a hundred years or once in a thousand years. Today's workflow builds a model, trains it on data, celebrates when it performs well, and catalogs what it can do afterward, without a theory predicting how a chosen architecture and training recipe will behave before deployment.
+    </p>
+
+    <p>
+      Drawing from engineering history, Forsyth noted that medieval cathedrals were built without formal structural mechanics, because builders knew how to inspect them and retrofit supports such as flying buttresses. Large software systems already resist piecemeal patching, which is why flight control software is engineered from day one to be tested. Modern neural systems push this problem further: <strong>we do not know how to guarantee their behavior, nor do we possess an intellectual framework to test, localize, and repair them systematically.</strong> Recalling that the history of engineering is written in blood—from the Tacoma Narrows Bridge collapse to metal fatigue in the De Havilland Comet—he warned that some critical lessons about autonomous neural systems may only be learned after serious real-world accidents.
+    </p>
+
+    <p>
+      Turning to the popular slogan that more data and more GPUs solve everything, Forsyth highlighted <strong>confirmation bias</strong>: researchers celebrate domains where scaling thrives and overlook vast problem areas where it fails outright. Two cases stand out. First, <strong>data-scarce domains</strong> such as ancient Hittite or Akkadian texts, low-resource languages, and specialized visual tasks with minimal or single-image supervision; transfer from large datasets helps, yet cannot remove domain specificity. Second, <strong>compute- and payload-constrained platforms</strong> such as long-range autonomous drones, which cannot carry high-wattage GPUs and heavy battery packs.
+    </p>
+
+    <h3>1.2 Zhuowen Tu: Synthetic Data Equivalence and Autoregressive Cycle Self-Supervision</h3>
+    <div class="speaker-meta">Aug. 16, 14:00–14:45 · Keynote Talk · University of California, San Diego</div>
+
+    <p>
+      Zhuowen Tu examined how much training value synthetic images actually provide relative to natural images. He expressed skepticism that generative models will capture the true underlying manifold of natural images within the next 10 to 15 years, as subtle statistical differences persist. Even so, imperfect realism does not imply zero utility. Rather than asking qualitatively whether synthetic data helps, his group measured <strong>how many synthetic samples equal a given number of real images</strong> under controlled conditions.
+    </p>
+
+    <p>
+      Their experiments yielded three consistent findings. First, <strong>stronger visual understanding models require substantially larger volumes of synthetic data</strong> to match the gain of additional real images, across both closed-set and open-set settings. Second, strict <strong>closed-set synthetic augmentation</strong> using no external data remains effective, scales well as the real training set grows, and can even outperform open-set setups in certain configurations. Third, <strong>when the base real training set is fixed, scaling synthetic data from 1x to 10x hits rapid diminishing returns</strong>, confirming that synthetic samples cannot be scaled indefinitely in isolation.
+    </p>
+
+    <p>
+      For unified multimodal foundation models, Zhuowen Tu favored <strong>autoregressive formulations</strong> over diffusion. While diffusion language models exist, they still trail autoregressive language models on core tasks, whereas autoregressive decoding places text, spatial layout, and image patches into a single next-token prediction sequence. Using detailed living-room scenes and numeracy prompts such as five dogs and three cats, he illustrated that modern generators—including NanoBanana—excel at visual plausibility yet still fail strict layout and counting constraints.
+    </p>
+
+    <p>
+      To improve controllability using unlabeled data, his group linked understanding and generation into a <strong>cycle-consistency loop</strong>: predicting layout or captions from an image and regenerating the image, or generating an image from a layout and re-predicting its layout. Measuring the discrepancy between input and reconstructed signals provides an automatic self-reward without extra human labels.
+    </p>
+
+    <div class="qa-box">
+      <p><strong>Q&amp;A · Full-Support Assumption and Collapse Risk</strong>: An audience member asked whether the theoretical result requires non-zero probability everywhere, since synthetic distributions may assign near-zero density on the true natural image manifold. Zhuowen Tu confirmed the full-support requirement and explained that in practice his group avoids raw pixel density estimation, mapping each image to roughly 10,000 statistical features summarized into 20-bin histograms so small pixel changes vary smoothly with non-zero probability. Asked whether cycle consistency can theoretically prevent model collapse, he acknowledged that <strong>no such proof exists</strong>: like most modern RL post-training methods, cycle self-reward depends on a reasonably strong pre-trained initialization and serves as a post-training improvement signal rather than an independent correctness verifier.</p>
+    </div>
+  </section>
+
+  <!-- ==================== 2. Physical Representations & Hybrid World Models ==================== -->
+  <section id="sec-physics-en">
+    <h2>2. Explicit Physical Representations and Hybrid World Models: Jiajun Wu &amp; Xiaojuan Qi</h2>
+
+    <blockquote class="goal-box">
+      <p><strong>Shared question</strong>: Foundation models absorb rich visual priors from internet media yet lack 3D geometry, material dynamics, and action causality; classical reconstruction and physics engines offer control yet lack visual diversity.</p>
+      <p><strong>Key judgment</strong>: Both talks point toward the same architectural shift—depth, optical flow, implicit surfaces, motion bases, and physical property fields are evolving from standalone prediction targets into causal control interfaces for foundation models.</p>
+    </blockquote>
+
+    <h3>2.1 Jiajun Wu: 4D Physical World Representations as Causal Interfaces</h3>
+    <div class="speaker-meta">Aug. 15, 10:05–10:35 · Online Talk · Stanford University</div>
+
+    <p>
+      Framing computer vision as inverse graphics, Jiajun Wu noted that pixels reflect underlying object geometry, materials, and motion, yet explicit physical labels are tiny compared to unlabeled internet images and videos. His lab has explored several routes to recover and use physical structure alongside foundation models:
+    </p>
+
+    <ul>
+      <li><strong>Differentiable forward processes as self-supervised priors</strong>: Structuring autoencoder latents through differentiable rendering allows training on unlabeled internet photos spanning roughly 100 quadruped species, recovering geometry, texture, reflectance, and rigged articulation from a single image at test time.</li>
+      <li><strong>Probabilistic deformation from static objects</strong>: Pairing a conditional VAE with a conditional encoder via reconstruction and KL alignment lets a single model sample plausible deformation fields from a static mesh across laptops, headsets, monitors, and USB sticks.</li>
+      <li><strong>4D Score Distillation Sampling and physical field recovery</strong>: Extending 3D SDS to video diffusion models requires structured spatial-temporal parameterization—hierarchical control points in space, a Fenwick Tree in time, and spatiotemporal smoothness regularization. Building on this line, <a href="https://arxiv.org/abs/2404.13026" target="_blank" rel="noopener">PhysDreamer</a> distills spatially varying stiffness fields for heterogeneous objects like flowers, while <a href="https://arxiv.org/abs/2503.04720" target="_blank" rel="noopener">FluidNexus</a> recovers 3D fluid appearance and velocity fields from a single video to support novel viewpoints and external wind perturbations.</li>
+      <li><strong>Free demonstrations from generative video</strong>: Synthesizing language-conditioned human or robot interactions enables automatic extraction of dense object flow for deformable objects, providing free imitation supervision deployed on a real cloth-folding robot.</li>
+      <li><strong>Hybrid simulators combining physics and video priors</strong>: Because video models still struggle with complex multi-contact actions, an imperfect 3D reconstruction can first pass through a physics simulator to produce coarse intuitive motion; the resulting depth or optical flow then conditions a video generator to render photorealistic multi-view clips, which in turn refine the 3D physical representation.</li>
+    </ul>
+
+    <p>
+      Summing up, Jiajun Wu argued that intermediate representations remain vital even when standalone optical-flow models are no longer the end goal. Physical representations offer <strong>universality</strong> across object types and <strong>built-in causality</strong>, yielding interpretability, counterfactual reasoning, and controllable foundation-model interaction almost for free.
+    </p>
+
+    <div class="qa-box">
+      <p><strong>Q&amp;A · Regularizing Degrees of Freedom</strong>: An audience question observed that pixel motion on a door or laptop lid looks high-dimensional yet lives on a single hinge parameter, whereas a flower exhibits rich secondary motions—raising a sharp regularization challenge. Jiajun Wu agreed that low-DOF models work much better on articulated objects, while the realistic flower demo relied on an over-parameterized Young's modulus field. Automatically discovering <strong>how many internal degrees of freedom and what spatial parameterization density an arbitrary object truly requires</strong> remains an open research problem.</p>
+    </div>
+
+    <h3>2.2 Xiaojuan Qi: Geometry-Constrained 3DGS, World Generation, and Self-Evolving Agents</h3>
+    <div class="speaker-meta">Aug. 15, 10:40–11:10 · In-Person Talk · The University of Hong Kong</div>
+
+    <p>
+      Tracing her research back to monocular depth estimation during her PhD at CUHK, Xiaojuan Qi highlighted two enduring lessons that continue to guide foundation models today: enforcing <strong>depth-normal geometric constraints</strong> rooted in 3D surface structure, and using <strong>game-engine synthetic ground truth</strong> to overcome noisy LiDAR sensors, producing cleaner depth predictions than models trained on real KITTI scans.
+    </p>
+
+    <p>
+      She then connected three layers needed to move from visual observations to interactive, self-improving embodied systems:
+    </p>
+
+    <ul>
+      <li><strong>Structured 3DGS for geometry, motion, and energy efficiency</strong>: Standard 3D Gaussian Splatting excels at novel-view appearance yet lacks surface accuracy, and unconstrained per-Gaussian motion easily overfits limited video frames. Her team developed <a href="https://arxiv.org/abs/2404.00409" target="_blank" rel="noopener">3DGSR</a>, coupling an implicit SDF surface with 3DGS to align Gaussian positions and normals, and modeled dynamic scenes through a low-rank, sparse <strong>motion basis interpolated from neighborhood control points</strong>. Combined with segmentation foundation models for object-level editing, her group also collaborates on hardware-software co-design to reduce rendering energy consumption.</li>
+      <li><strong>Explicit 3D versus video world generation</strong>: Pure reconstruction suffers from occluded regions and limited scene diversity. Video world models align closely with continuous human perception and suit action modeling, whereas explicit 3D worlds enable reproducible benchmarks and targeted corner-case data synthesis. She likewise highlighted a hybrid target: <strong>explicit 3D controlling geometry, multi-view consistency, and physics, paired with video models for realistic rendering</strong>.</li>
+      <li><strong>Adaptive action chunking in World Action Models</strong>: Fixed action chunks either waste replanning cycles in easy phases or accumulate errors during delicate insertion. Inspired by humans moving quickly when confident and slowing down on hard steps, her group uses <strong>inconsistency between world-model imagination and real execution</strong> to shorten chunks and trigger immediate replanning near tight tolerances.</li>
+      <li><strong>Online critic replanning and offline experience consolidation</strong>: At the agent layer, a reflection/critic module detects failed low-level executions and issues revised prompts for re-execution, showing that agentic harnesses do more than long-horizon decomposition—they <strong>raise the effective success ceiling of imperfect low-level policies</strong>. Offline, a data curator and skill generator consolidate deployment experience into updated skills and planners, analogous to human memory consolidation during sleep.</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 3. Interactive Simulation & Real-World Deployment ==================== -->
+  <section id="sec-deploy-en">
+    <h2>3. Interactive World Simulation and Real-World Deployment: Bolei Zhou, Huaizu Jiang &amp; Qi Dou</h2>
+
+    <blockquote class="goal-box">
+      <p><strong>Shared question</strong>: How do compute budgets, sensor limits, failure attribution, and clinical workflows reshape world models and autonomy when deployed on crowded sidewalks, streaming force interfaces, and operating rooms.</p>
+      <p><strong>Key judgment</strong>: Across all three talks, practical constraints drive architecture choices—graphical engines anchor attribution in hybrid simulation, causal streaming distillation unlocks live physical control, and surgical autonomy advances through bounded modular assistance.</p>
+    </blockquote>
+
+    <h3>3.1 Bolei Zhou: Sidewalk Autonomy, Scalable Urban Simulation, and Cross-Embodiment Transfer</h3>
+    <div class="speaker-meta">Aug. 16, 10:25–10:55 · Online Talk · University of California, Los Angeles</div>
+
+    <p>
+      Bolei Zhou grounded his talk in Coco Robotics, a Los Angeles startup where he serves as technical advisor, operating over 1,000 sidewalk food-delivery robots across campuses. Despite that fleet scale, real-world autonomy remains low: nearly every robot still relies on a remote human teleoperator. Tight compute and battery budgets prevent mounting heavy LiDAR arrays, forcing navigation from <strong>monocular RGB cameras alone</strong> amid nighttime pedestrians, static clutter, pets, and dynamic crosswalks.
+    </p>
+
+    <p>
+      To evaluate and post-train end-to-end navigation policies prior to physical deployment, his lab built a layered simulation pipeline:
+    </p>
+
+    <ul>
+      <li><strong>UrbanSim interaction benchmarking</strong>: Addressing CARLA's slow CPU speed and Isaac Sim's limited urban assets, UrbanSim builds high-fidelity sidewalk environments on Isaac Sim supporting delivery robots, humanoids, and wheelchairs. It defines structured human-robot interaction unit tests—blocking pedestrians, coffee queues, head-on yielding, and traffic-light crosswalks—to compare nine navigation models side by side.</li>
+      <li><strong><a href="https://arxiv.org/abs/2501.06693" target="_blank" rel="noopener">Vid2Sim</a> and spatial scanning</strong>: To narrow the sim-to-real gap, Vid2Sim uses monocular depth and surface normal pseudo-labels to reconstruct geometry-consistent 3DGS environments from single sidewalk videos, adds animated 3D pedestrians and lighting style transfer, and trains RL policies achieving zero-shot monocular obstacle avoidance. To overcome sensitivity to moving objects in phone footage, the team adopted LiDAR-RGB spatial scanners for larger campus captures.</li>
+      <li><strong><a href="https://arxiv.org/abs/2510.15018" target="_blank" rel="noopener">UrbanVerse</a> for diverse scene variations</strong>: Moving from one-to-one digital twins to scalable variations, UrbanVerse extracts an abstract <strong>3D scene graph</strong> and spatial layout from video and populates it with interchangeable 3D assets. Using multi-view renders prompted into ChatGPT to estimate mass, size, and materials—outperforming human annotators who consistently underestimated heavy truck weights—the group open-sourced <strong>over 100,000 metric-scale annotated 3D assets</strong>.</li>
+      <li><strong>Pre-training, RL post-training, and ProPilot transfer</strong>: Mirroring LLM pipelines, passive imitation pre-training on large demonstration videos is followed by active RL post-training inside interactive simulations. Fine-tuned with embodiment-specific data, the resulting <strong>ProPilot</strong> navigation model transfers across wheeled delivery robots, Unitree Go2 quadrupeds, and modified electric wheelchairs.</li>
+    </ul>
+
+    <div class="qa-box">
+      <p><strong>Q&amp;A · Distinguishing Harmful Simulation Errors and Co-Training</strong>: Noting missing pedestrian feet in a rendered clip, a questioner asked how to separate harmless visual artifacts from simulation errors that corrupt policy planning. Bolei Zhou pointed out that data-driven world models blur whether a failure stems from the simulator or the policy; the missing feet arose from combining separately reconstructed humans and static backgrounds with imperfect occlusion and ground contact. Both his lab and industry partners therefore favor a <strong>hybrid approach</strong>: Isaac Sim provides controllable geometry and rules, the world model re-renders appearance, and object detection checks whether expected humans remain intact. Responding to a follow-up remark that overly smart optimizers exploit tiny simulator bugs—suggesting robust optimization to deliberately restrain search—Zhou proposed <strong>co-training trainable world models and policies</strong> so simulation and control evolve together.</p>
+    </div>
+
+    <h3>3.2 Huaizu Jiang: StreamForce for Causal Streaming Force-Controlled Video</h3>
+    <div class="speaker-meta">Aug. 16, 11:00–11:30 · Online Talk · Northeastern University</div>
+
+    <p>
+      Huaizu Jiang presented <a href="https://arxiv.org/abs/2606.07508" target="_blank" rel="noopener">StreamForce</a>, accepted at SIGGRAPH Asia 2026 with first author Hanhui Wang joining on site, advancing physical force conditioning as an intuitive interaction space for video world models. Prior force prompting required separate models for different force types and locked the force condition to a constant value across the entire clip.
+    </p>
+
+    <p>
+      <strong>StreamForce turns force conditioning into a continuous causal loop</strong>: users can start with a gentle wind, observe that smoke stops short of a detector, and immediately strengthen or redirect the force mid-stream, or poke a rigid object from alternating angles until it reaches a target zone. Three design elements make this work: a <strong>unified force representation</strong> covering both local pushes and global wind within one model; <strong>time-varying force data</strong>, which proved essential for motion tracking across dynamic interactions; and a <strong>two-stage distillation pipeline</strong> that trains a bidirectional ControlNet teacher on constant and changing synthetic forces before distilling into a <strong>causal streaming student</strong> using an automated pipeline that pairs real images, forces, and future videos.
+    </p>
+
+    <p>
+      Notably, the model never receives explicit physics equations yet learns coherent open-domain rigid-body dynamics from data, pointing toward forward simulation for robotic manipulation. Key open challenges remain: richer action interfaces beyond simple forces, extending from rigid objects to <strong>deformable bodies and fluid dynamics</strong>, and adding <strong>persistent memory</strong> for long-horizon multi-turn consistency.
+    </p>
+
+    <h3>3.3 Qi Dou: Clinical Modular Autonomous Surgery and the Surgeon's Third Hand</h3>
+    <div class="speaker-meta">Aug. 16, 14:50–15:20 · In-Person Talk · The Chinese University of Hong Kong</div>
+
+    <p>
+      Qi Dou presented clinical integration of vision-driven surgical autonomy on a Hong Kong-developed surgical robot approved by NMPA, CE, and Singapore regulators. Standard da Vinci-style laparoscopic systems feature one endoscope arm and three manipulation arms, yet a surgeon has only two hands and must repeatedly press foot pedals to switch arms, creating a steeper learning curve than open team surgery.
+    </p>
+
+    <p>
+      Rather than aiming to replace surgeons outright, her team framed clinical autonomy around <strong>an autonomous "third hand" and modularized subtasks</strong>:
+    </p>
+
+    <ul>
+      <li><strong>Sterile vision-only control and zero-hardware voice triggers</strong>: Relying solely on high-resolution sterile endoscope video avoids adding intrusive clinical sensors. Foot pedals remain for fast deterministic switching, while existing console microphones—already built in for speaking with operating-room nurses—capture voice commands to activate, select, or stop AI subtasks.</li>
+      <li><strong>Auto-parking style modular autonomy</strong>: Focusing on clearly bounded, transferable subtasks, the system was validated on gauze pickup under bright, dim, and blood-stained conditions, soft tissue retraction to maintain surgical tension, and clipping of blood vessels under 5 mm—reaching <strong>over 95% success</strong> on key tasks. Validation spans simulation, ex vivo tissue, <strong>over 10 live pig trials, and 2 full cadaver cholecystectomies</strong>, with a first-in-human trial planned later this year and extensions to gastric and colorectal surgery.</li>
+      <li><strong>Surgical foundation models and data bottlenecks</strong>: Generalist VLMs such as Gemini and GPT fall short on surgical action prediction, and <strong>VLAs have yet to produce an established success story in surgical robotics</strong>. High-precision teleoperation platforms already generate paired 3D surgical video and kinematics; the real bottlenecks are curating clinical datasets, solving <strong>long-horizon manipulation</strong> while common general cases still take priority over rare corner cases, and integrating tactile sensing, eye-gaze next-graspable-point prediction, and surgeon-specific continual adaptation.</li>
+    </ul>
+
+    <div class="qa-box">
+      <p><strong>Q&amp;A · Junior Surgeon Deskilling and Quantifying Surgical Feel</strong>: Asked whether automating simple repetitive steps disrupts surgical training by removing entry-level practice for trainees, Qi Dou agreed this is a real dilemma. Robotic surgery has already reduced hands-on opportunities for junior surgeons, and radiology already shows signs of <strong>deskilling</strong> when trainees lose confidence and miss early cancer signs once AI assistance is removed; the medical AI community has only begun debating solutions with no consensus yet. Looking ahead 5–10 years, she expects higher levels of human-robot oversight rather than unmanned surgery due to patient trust. Beyond near-term efficiency and cost gains, her team collaborates with sensing researchers to turn top surgeons' implicit tactile judgment—how far tissue can safely stretch before injury—into a measurable platform that eventually performs standardized subtasks more consistently than humans.</p>
+    </div>
+  </section>
+
+  <!-- ==================== 4. Synthesis & Takeaways ==================== -->
+  <section id="sec-synthesis-en">
+    <h2>4. Cross-Talk Comparison and Four Takeaways</h2>
+
+    <div class="tbl-wrap">
+      <div class="tbl-bar">
+        <span>Table 2 · Cross-Talk Comparison of Representations, Feedback Loops, and Open Bottlenecks</span>
+        <button class="btn" onclick="copyTable('tbl-2-en', this)">📋 Copy Table</button>
+      </div>
+      <table id="tbl-2-en">
+        <thead>
+          <tr>
+            <th style="min-width:110px">Speaker</th>
+            <th style="min-width:155px">Primary Representation</th>
+            <th style="min-width:170px">Feedback &amp; Verification Loop</th>
+            <th>Key Open Bottleneck</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>David Forsyth</strong></td>
+            <td>General neural models &amp; safety-critical systems</td>
+            <td>Missing tight failure bounds &amp; testability framework</td>
+            <td>Lack of design-test-repair theory; low-data and edge scaling limits</td>
+          </tr>
+          <tr>
+            <td><strong>Jiajun Wu</strong></td>
+            <td>4D physical fields, deformation latents &amp; hybrid sim</td>
+            <td>Differentiable rendering, 4D SDS &amp; multi-view refinement</td>
+            <td>Adaptive discovery of object DOFs between hinges and soft fields</td>
+          </tr>
+          <tr>
+            <td><strong>Xiaojuan Qi</strong></td>
+            <td>3DGSR, low-rank motion basis, adaptive WAM &amp; Agent</td>
+            <td>Prediction-error chunking, online critic &amp; offline consolidation</td>
+            <td>Enforcing physics across 3D/video hybrids and lowering render energy</td>
+          </tr>
+          <tr>
+            <td><strong>Bolei Zhou</strong></td>
+            <td>UrbanSim, Vid2Sim 3DGS &amp; UrbanVerse scene graphs</td>
+            <td>Unit tests, RL post-training &amp; detection cross-checks</td>
+            <td>Attributing simulator vs. policy errors; dynamic occlusion artifacts</td>
+          </tr>
+          <tr>
+            <td><strong>Huaizu Jiang</strong></td>
+            <td>StreamForce unified force-conditioned causal video</td>
+            <td>Bidirectional teacher to causal student streaming loop</td>
+            <td>Deformable and fluid physics; persistent long-horizon memory</td>
+          </tr>
+          <tr>
+            <td><strong>Zhuowen Tu</strong></td>
+            <td>Closed-set synthetic data &amp; unified AR sequences</td>
+            <td>Understanding-generation cycle self-reward</td>
+            <td>Diminishing synthetic returns; no theoretical anti-collapse proof</td>
+          </tr>
+          <tr>
+            <td><strong>Qi Dou</strong></td>
+            <td>Sterile vision modular policies &amp; surgical VLMs</td>
+            <td>Live animal, cadaver validation &amp; clinician feedback</td>
+            <td>Long-horizon manipulation, VLA gap, and trainee deskilling</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Synthesizing all seven talks points to four durable takeaways for ongoing research planning:
+    </p>
+
+    <p>
+      <strong>1. Hybrid world models are becoming the practical consensus over pure end-to-end pixel simulation.</strong><br/>
+      Jiajun Wu's physics simulator paired with video synthesis, Xiaojuan Qi's explicit 3D geometry paired with video rendering, and Bolei Zhou's Isaac Sim backbone paired with world-model re-rendering and object-detection checks converge on one division of labor: <strong>explicit engines guarantee controllable structure, physical consistency, and error attribution, while generative models supply photorealism and visual diversity.</strong>
+    </p>
+
+    <p>
+      <strong>2. Explicit physical and low-dimensional structures are shifting from standalone CV targets into foundation-model interfaces.</strong><br/>
+      Depth, optical flow, implicit SDF surfaces, low-rank motion bases, and unified force vectors inject compact physical inductive bias where raw pixel generation drifts or overfits. Discovering the right degree-of-freedom complexity automatically—bridging low-parameter hinges and spatially varying soft fields—stands out as a foundational open problem.
+    </p>
+
+    <p>
+      <strong>3. Self-improving loops depend on strong pre-trained initialization and external verification.</strong><br/>
+      Zhuowen Tu's caveat on cycle-consistency collapse, the Q&amp;A discussion on controllers exploiting tiny simulation bugs, and Xiaojuan Qi's separation of online critic replanning from offline skill consolidation highlight a shared rule: closed-loop training is not self-validating. Without capable pre-trained bases and independent checks or co-evolving simulators, self-rewards can lock into consistent errors or amplify simulator flaws.
+    </p>
+
+    <p>
+      <strong>4. Real-world deployment succeeds through bounded modularity rather than overnight full autonomy.</strong><br/>
+      Until aviation-grade reliability theory catches up with neural models, pragmatic impact comes from well-scoped modules—monocular sidewalk policies verified via interaction unit tests, and auto-parking-style surgical subtasks embedded as a surgeon's third hand—while pairing hardware constraints, tactile quantification, and long-term safeguards against human deskilling.
+    </p>
+  </section>
+</div>
+      </article>
+    </section>
+  </div>
+
+  <script>
+    const TARGET_FILE = "/Users/xintinghu/Library/CloudStorage/OneDrive-个人/Onedrive_NTU/code/JoyHuYY1412.github.io/blog/cuhk-world-model-symposium-2026/index.html";
+
+    function syncLangUI(lang) {
+      var bZh = document.getElementById("btn-zh");
+      var bEn = document.getElementById("btn-en");
+      if (bZh && bEn) {
+        bZh.className = lang === "zh" ? "active" : "";
+        bEn.className = lang === "en" ? "active" : "";
+      }
+      document.title = lang === "en"
+        ? "Notes from the CUHK 2026 Multi-Modal and World Model Symposium | Xinting Hu | USTC"
+        : "香港中文大学多模态与世界模型研讨会笔记 | Xinting Hu | USTC";
+    }
+
+    function setLang(lang) {
+      document.documentElement.setAttribute("data-lang", lang);
+      document.documentElement.setAttribute("lang", lang === "en" ? "en-US" : "zh-CN");
+      localStorage.setItem("xh_blog_lang", lang);
+      syncLangUI(lang);
+      try {
+        var url = new URL(window.location.href);
+        url.searchParams.set("lang", lang);
+        window.history.replaceState({}, "", url.toString());
+      } catch (e) {}
+    }
+
+    (function() {
+      var cur = document.documentElement.getAttribute("data-lang") || "zh";
+      syncLangUI(cur);
+      var lf = document.getElementById("local-finder-btn");
+      if (lf && (location.hostname === "127.0.0.1" || location.hostname === "localhost" || location.protocol === "file:")) {
+        lf.style.display = "inline-block";
+      }
+    })();
+
+    function openInFinder() {
+      fetch("http://127.0.0.1:18765/finder?path=" + encodeURIComponent(TARGET_FILE) + "&t=" + Date.now()).catch(function() {});
+    }
+
+    function tableToMd(tbl) {
+      var rows = Array.from(tbl.querySelectorAll("tr"));
+      return rows.map(function(r, idx) {
+        var cells = Array.from(r.querySelectorAll("th, td")).map(function(c) {
+          return c.textContent.replace(/\s+/g, " ").trim().replace(/\|/g, "\\|");
+        });
+        var line = "| " + cells.join(" | ") + " |";
+        if (idx === 0) return line + "\n| " + cells.map(function() { return ":---"; }).join(" | ") + " |";
+        return line;
+      }).join("\n");
+    }
+
+    function copyTable(id, btn) {
+      var tbl = document.getElementById(id);
+      if (!tbl) return;
+      var htmlStr = "<table>" + tbl.innerHTML + "</table>";
+      var mdStr = tableToMd(tbl);
+      var old = btn.innerText;
+      if (navigator.clipboard && window.ClipboardItem) {
+        navigator.clipboard.write([new ClipboardItem({
+          "text/html": new Blob([htmlStr], { type: "text/html" }),
+          "text/plain": new Blob([mdStr], { type: "text/plain" })
+        })]).then(function() {
+          btn.innerText = "✓ 已复制";
+          setTimeout(function() { btn.innerText = old; }, 1600);
+        });
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(mdStr).then(function() {
+          btn.innerText = "✓ 已复制";
+          setTimeout(function() { btn.innerText = old; }, 1600);
+        });
+      }
+    }
+  </script>
+</body>
+</html>

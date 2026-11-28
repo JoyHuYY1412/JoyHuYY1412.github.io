@@ -108,6 +108,31 @@ permalink: /blog/
 
 <div class="blog-entry">
   <div class="blog-entry-meta">
+    [Nov. 2026] &nbsp;·&nbsp; World Models · Embodied AI · 4D Vision · Surgical Robotics
+  </div>
+
+  <div class="blog-entry-title b-zh">
+    <a href="./cuhk-world-model-symposium-2026/?lang=zh">香港中文大学多模态与世界模型研讨会笔记：物理表征、闭环交互与落地边界</a>
+  </div>
+  <div class="blog-entry-title b-en">
+    <a href="./cuhk-world-model-symposium-2026/?lang=en">Notes from the CUHK 2026 Multi-Modal and World Model Symposium: Physical Representations, Closed-Loop Interaction, and Engineering Limits</a>
+  </div>
+
+  <div class="blog-entry-desc b-zh">
+    整理自 2026 年 8 月香港中文大学 Multi-Modal and World Model Symposium 七场特邀报告（David Forsyth、Jiajun Wu、Xiaojuan Qi、Bolei Zhou、Huaizu Jiang、Zhuowen Tu 与 Qi Dou），梳理可靠性与 Scaling 边界、4D 物理接口、混合世界模型、流式力控视频与模块化自主手术的核心进展。
+  </div>
+  <div class="blog-entry-desc b-en">
+    Synthesized from seven invited talks at the CUHK Multi-Modal and World Model Symposium 2026 (David Forsyth, Jiajun Wu, Xiaojuan Qi, Bolei Zhou, Huaizu Jiang, Zhuowen Tu, and Qi Dou), covering neural reliability and scaling limits, 4D physical interfaces, hybrid world models, streaming force control, and modular autonomous surgery.
+  </div>
+
+  <div class="blog-links">
+    <a class="btn" href="./cuhk-world-model-symposium-2026/?lang=zh">中文全文</a>
+    <a class="btn" href="./cuhk-world-model-symposium-2026/?lang=en">English Post</a>
+  </div>
+</div>
+
+<div class="blog-entry">
+  <div class="blog-entry-meta">
     [Nov. 2026] &nbsp;·&nbsp; Embodied AI · Agentic RL · WAM · MoE · Multi-Agent
   </div>
 
